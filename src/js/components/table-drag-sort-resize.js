@@ -182,103 +182,62 @@ function moveTableColumn1(table, start, end) {
     }
 }
 function restoreState(key, table, name) {
-    var nc = table.rows[0].cells.length,
-        pm = new Array(nc);
-    for (var i = 0; i < nc; i++) {
-        pm[i] = i;
-    }
-    console.log("restoreState!");
+    var nc = table.rows[0].cells.length;
+    var pm = Array.from({length: nc}, (_, i) => i); // Исходная перестановка
+
     if (!localStorage) {
         console.log('localStorage не поддерживается или не используется');
         return pm;
     }
 
-    var state = loadState(key),
-        id = table.getAttribute('id'),
-        index = findIndex(state, id);
-
-
-    // console.log("state", state)
-    // console.log("id", id)
-    // console.log("index: ", index)
-    // console.log("key", key)
+    var state = loadState(key);
+    var id = table.getAttribute('id');
+    var index = findIndex(state, id);
 
     if (index >= 0) {
-        var keys = Object.keys(state[index])
-        var keyName = keys[1]
+        var keys = Object.keys(state[index]);
+        var keyName = keys[1];
         name = keyName;
 
-        var element = state[index],
-            memory = element[name];
+        var element = state[index];
+        var memory = element[keyName];
 
+        if (keyName == 'drag' || keyName == 'resize') {
+            if (nc != memory.length) {
+                console.log('Несоответствие размеров');
+                return pm;
+            }
 
-        if (name == 'drag' || name == 'resize') {
+            if (keyName == 'drag') {
+                // Восстановление порядка столбцов
+                var targetPositions = memory.map((origIndex, newIndex) => ({ origIndex, newIndex }));
+                // Сортируем чтобы двигать столбцы с наибольшего индекса
+                targetPositions.sort((a, b) => b.newIndex - a.newIndex);
 
-            var length = memory.length,
-                nc = table.rows[0].cells.length;
-
-            // console.log("length", length);
-            // console.log("nc", nc);
-
-            //проверить длину
-            if (nc == length) {
-                if (name == 'drag') {
-                    console.log(name)
-                    console.log(memory)
-
-                    for (var i = 0; i < length; i++) {
-                        var start = memory[i],
-                            end = i;
-                        pm.move(start, end);
-                        if (pm[i] != start) {
-                            console.log("pm", pm)
-                            console.log(`pm[i]: ${pm[i]}, start: ${start}, end: ${end}`);
-                            moveTableColumn(table, start, end);
-                        }
-                    }
-                    // console.log(table.rows[0])
-                    // let columns = document.querySelectorAll('.table th.sort-header')
-                    // console.log(columns)
-
-
-
-                    for (var i = 0; i < table.rows.length; i++) {
-
-                        var row = table.rows[i];
-                        // console.log(row.cells[2])
-
-                        // var start = row.removeChild(row.cells[2]);
-                        // var end = row.insertBefore(start, row.cells[1]);
-                        // console.log("---")
-
-
-                    }
-
-                    for (var i = 0; i < length; i++) {
-                        //console.log(memory[i]);
-                        // console.log("---");
-                        // console.log(`memory[i]: ${memory[i]}, i: ${i}`);
-                        // pm.move(memory[i], i);
-                        // moveTableColumn1(table, memory[i], i);
-                    }
-
-                    pm = memory;
-                } else if (name == 'resize') {
-                    for (var i = 0; i < nc; i++) {
-                        var cell = table.rows[0].cells[i];
-                        cell.style.maxWidth = cell.style.width = memory[i];
+                for (var item of targetPositions) {
+                    var currentIndex = pm.indexOf(Number(item.origIndex));
+                    if (currentIndex !== item.newIndex) {
+                        moveTableColumn(table, currentIndex, item.newIndex);
+                        // Обновляем перестановку
+                        pm.splice(item.newIndex, 0, pm.splice(currentIndex, 1)[0]);
                     }
                 }
+                // Обновляем pm to match memory после всех перемещений
+                pm = memory.slice();
+            } else if (keyName == 'resize') {
+                // Восстановление размеров
+                for (var i = 0; i < nc; i++) {
+                    var cell = table.rows[0].cells[i];
+                    cell.style.maxWidth = cell.style.width = memory[i];
+                }
             }
-        } else if (name == 'sort') {
+        } else if (keyName == 'sort') {
+            // Восстановление сортировки
             var cell = table.rows[0].cells[memory.index];
-
             cell.className += ' ' + memory.order;
-
             sort(cell, table);
         }
     }
-
     return pm;
 }
 
