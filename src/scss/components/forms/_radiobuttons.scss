@@ -1,0 +1,69 @@
+@use  '../../mixins/visually-hidden' as *;
+
+.radio {
+    font-size: 0;
+    line-height: 0;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+
+    &__input {
+        @include visually-hidden();
+    }
+
+    &__label {
+        color: black;
+        cursor: pointer;
+        font-size: rel(14);
+        line-height: rel(20);
+        position: relative;
+        padding-left: rel(30);
+        display: block;
+
+        &::before {
+            top: 0;
+            left: 0;
+            z-index: 1;
+            content: '';
+            width: rel(20);
+            height: rel(20);
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid var(--gray);
+        }
+
+        &:after {
+            top: rel(6);
+            left: rel(6);
+            z-index: 2;
+            content: '';
+            width: rel(8);
+            height: rel(8);
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            background: var(--white);
+            border-radius: 50%;
+        }
+    }
+
+
+    &__input:checked + .radio__label {
+
+        &::before {
+            border-color: var(--blue);
+            background: var(--blue);
+        }
+
+        &::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__input:disabled + .radio__label {
+        opacity: 0.5;
+    }
+}

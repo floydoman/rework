@@ -1,0 +1,74 @@
+// Options
+$enable-grid-classes:         true !default;
+
+$html-font-size:            10px;
+//$font-size-base:            1rem !default;
+
+$spacer: 1rem !default;
+$spacers: (
+    0: 0,
+    1: calc($spacer / 4),
+    2: calc($spacer / 2),
+    3: $spacer,
+    4: calc($spacer * 1.5),
+    5: calc($spacer * 3),
+) !default;
+
+// Grid
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1320px,
+    xxl: 1440px
+) !default;
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1300px,
+    xxl: 1332px
+) !default;
+
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           1.5rem !default;
+$grid-row-columns:            6 !default;
+
+$gutters: $spacers !default;
+
+$container-padding-x: $grid-gutter-width !default;
+
+
+:root {
+    --font-primary:         'Golos Text', Arial, sans-serif;
+    --font-secondary:       'Golos Text', Arial, sans-serif;
+
+    --black:                #13151A;
+    --white:                #ffffff;
+    --blue:                 #003099;
+    --blue-light:           #DEEDFF;
+    --blue-light2:          #f1f7ff;
+    --gray:                 #454B5D;
+    --gray-light:           #F5F6F7;
+    --gray-900:             #101828;
+    --red:                  #CC0029;
+
+    --text-primary:         #13151A;
+    --text-secondary:       #5D6570;
+    --text-danger:          #E00000;
+    --text-warning:         #D46E00;
+    --text-success:         #03A600;
+
+    --component-primary:    #003099;
+    --component-secondary:  #DEEDFF;
+
+    --font-size-base:       1rem;
+    --line-height-base:     1.5;
+
+    --transition-time:      .25s;
+    --shadow:               0 0 0 #fff;
+}

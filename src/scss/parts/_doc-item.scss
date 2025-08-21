@@ -1,0 +1,62 @@
+.doc-item {
+    font-size: rel(16);
+    line-height: rel(24);
+    color: var(--text-primary);
+    padding: rel(20);
+    border-radius: rel(12);
+    border: 1px solid #BCC4CF;
+    display: flex;
+    row-gap: rel(8);
+    flex-direction: column;
+
+    &__content {
+        display: flex;
+        column-gap: rel(8);
+        align-items: center;
+    }
+
+    &__icon {
+        width: rel(20);
+        height: rel(24);
+        flex-shrink: 0;
+        display: block;
+    }
+
+    &__name {
+
+    }
+
+    &__button {
+        fill: #003099;
+        color: #003099;
+        font-size: rel(14);
+        line-height: rel(16);
+        text-decoration: none;
+        display: flex;
+        column-gap: rel(8);
+        align-items: center;
+
+        &:hover {
+            color: #003099;
+            text-decoration: underline;
+        }
+
+        i {
+            font-size: 0;
+            line-height: 0;
+            height: rel(16);
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        span {
+
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,98 @@
+.aside {
+    width: rel(78);
+    flex-shrink: 0;
+    background-color: white;
+    padding: rel(24) rel(16);
+    border-radius: rel(16);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-time);
+
+    &__nav {
+        display: flex;
+        row-gap: rel(4);
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__link {
+        stroke: #344054;
+        color: var(--gray-900);
+        min-height: rel(40);
+        font-size: rel(16);
+        line-height: rel(20);
+        padding: rel(8) rel(12);
+        text-decoration: none;
+        border-radius: rel(8);
+        background-color: transparent;
+        transition: var(--transition-time);
+        display: flex;
+        align-items: center;
+
+        i {
+            font-size: 0;
+            line-height: 0;
+            flex-shrink: 0;
+            height: rel(20);
+            display: inline-block;
+        }
+
+        span {
+            display: none;
+        }
+
+        &:hover {
+            color: var(--gray-900);
+            text-decoration: none;
+            background-color: #F2F4F7;
+            transition: var(--transition-time);
+        }
+
+        &.active {
+            font-weight: 600;
+            background-color: #F2F4F7;
+        }
+    }
+
+    &__toggle {
+        padding: 0;
+        width: 100%;
+        border: none;
+        outline: none;
+        height: rel(40);
+        cursor: pointer;
+        background-color: transparent;
+        font-size: 0;
+        line-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            font-size: 0;
+            line-height: 0;
+            flex-shrink: 0;
+            height: rel(20);
+            display: inline-block;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: rel(274);
+
+        &__toggle {
+            display: none;
+        }
+
+        &__link {
+
+            i {
+                display: none;
+            }
+
+            span {
+                display: block;
+            }
+        }
+    }
+}

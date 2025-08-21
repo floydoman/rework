@@ -1,0 +1,759 @@
+<div class="hide">
+    <div class="modal" id="period_settings">
+        <div class="modal__header">
+            <div class="modal__title">Настройка периодичности</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <form>
+                <div class="mb-16">
+                    <label class="form-label">Повторять</label>
+                    <div class="select" data-select>
+                        <input type="hidden" name="view" data-select-value="Еженедельно">
+                        <div class="select__control" data-select-control>
+                            <div class="select__active" data-select-active>Еженедельно</div>
+                        </div>
+                        <div class="select__dropdown" data-select-dropdown>
+                            <div class="select__item active" data-select-item="Еженедельно">Еженедельно</div>
+                            <div class="select__item" data-select-item="Ежедневно">Ежедневно</div>
+                            <div class="select__item" data-select-item="Ежемесячно">Ежемесячно</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex gap-8 mb-16">
+                    <div class="flex-grow-1">
+                        <label class="form-label">Начало</label>
+                        <label class="field">
+                            <input type="text" name="from" data-date="bottom left" value="01.01.2025">
+                        </label>
+                    </div>
+                    <div class="flex-grow-1">
+                        <label class="form-label">Конец</label>
+                        <label class="field">
+                            <input type="text" name="from" data-date="bottom right" value="">
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label class="checkbox">
+                        <input type="checkbox" name="checkbox" class="checkbox__input">
+                        <i class="checkbox__item"></i>
+                        <span class="checkbox__label">Повторять бессрочно</span>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary">Сохранить</button>
+            <button type="button" class="btn btn-outline" data-fancybox-close>Отменить</button>
+        </div>
+    </div>
+
+    <div class="modal" id="user-info">
+        <div class="modal__header">
+            <div class="modal__title">Пользователь</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Логин</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Фамилия</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Имя</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Отчество</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">E-mail</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Телефон</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Роль пользователя</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Организация</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Адреса обслуживания</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Доступные виды работ</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">ФИО руководителя</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+            <div class="d-flex gap-8 mb-16 border-bottom-gray">
+                <div class="flex-basis-50">
+                    <div class="form-label">Телефон руководителя</div>
+                </div>
+                <div class="flex-basis-50">
+                    <div class="form-label">Текст</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal w-736" id="setting-notifications">
+        <div class="modal__header">
+            <div class="modal__title">Настройка уведомлений</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body text-primary">
+            <div class="d-flex">
+                <p class="fs-16">Выберите способ получения уведомлений</p>
+            </div>
+            <div class="d-flex flex-column row-gap-20 mb-36">
+                <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" checked>
+                    <i class="checkbox__item"></i>
+                    <span class="checkbox__label fs-16">Системные уведомления</span>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" checked>
+                    <i class="checkbox__item"></i>
+                    <span class="checkbox__label">Telegram</span>
+                </label>
+            </div>
+            <div class="d-flex flex-column row-gap-20">
+                <div class="round-border gap-8">
+                    <div class="flex-basis-20">
+                        <img src="/img/qr-telegram.png" alt="">
+                    </div>
+                    <div class="flex-basis-80">
+                        Для получения уведомлений необходимо перейти по ссылке и запустить <a href="#">телеграм-бот</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary" data-fancybox-close="">Применить</button>
+
+        </div>
+    </div>
+
+    <div class="modal" id="export-registry">
+        <div class="modal__header">
+            <div class="modal__title">Экспорт реестра</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <form>
+                <div class="mb-16">
+                    <label class="form-label">Выберите формат</label>
+                    <div class="select" data-select>
+                        <input type="hidden" name="view" data-select-value="XLSX">
+                        <div class="select__control" data-select-control>
+                            <div class="select__active" data-select-active>XLSX</div>
+                        </div>
+                        <div class="select__dropdown" data-select-dropdown>
+                            <div class="select__item active" data-select-item="XLSX">XLSX</div>
+                            <div class="select__item" data-select-item="DOC">DOC</div>
+                            <div class="select__item" data-select-item="PDF">PDF</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label">Выберите столбцы</label>
+                    <div class="d-flex gap-8">
+                        <div class="radio">
+                            <input id="bySelectedColumns" type="radio" name="radio-export" class="radio__input" checked value="По выбранным колонкам">
+                            <label for="bySelectedColumns" class="radio__label">По выбранным колонкам</label>
+                        </div>
+                        <div class="radio">
+                            <input id="full" type="radio" name="radio-export" class="radio__input" value="Полная">
+                            <label for="full" class="radio__label">Полная</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary">Выгрузить</button>
+            <button type="button" class="btn btn-outline" data-fancybox-close>Отменить</button>
+        </div>
+    </div>
+
+    <div class="modal" id="employee-delete">
+        <div class="modal__header">
+            <div class="modal__title">
+                <i class="icon-information orange d-flex mb-24"></i>
+                Подтверждение удаления</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="mb-16">
+                <p class="fs-16">Вы уверены, что хотите удалить выбранные данные сотрудника?<br />Это действие невозможно отменить.</p>
+            </div>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary" data-src="#approving-changes" data-fancybox="">Удалить</button>
+            <button type="button" class="btn btn-outline" data-fancybox-close>Отменить</button>
+        </div>
+    </div>
+
+    <div class="modal" id="approving-changes">
+        <div class="modal__header">
+            <div class="modal__title">
+                <i class="icon-information blue d-flex mb-24"></i>
+                Согласование изменений</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="mb-16">
+                <p class="fs-16">Для подтверждения удаления необходимо получить согласование внесенных изменений.</p>
+            </div>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary">Отправить на согласование</button>
+            <button type="button" class="btn btn-outline" data-fancybox-close>Отменить</button>
+        </div>
+    </div>
+
+    <div class="modal" id="access-delete">
+        <div class="modal__header">
+            <div class="modal__title">
+                <i class="icon-information orange d-flex mb-24"></i>
+                Подтверждение удаления</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="mb-16">
+                <p class="fs-16">Вы уверены, что хотите удалить выбранные доступы? <br />Это действие невозможно отменить.</p>
+            </div>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary" data-fancybox-close>Удалить</button>
+            <button type="button" class="btn btn-outline" data-fancybox-close>Отменить</button>
+        </div>
+    </div>
+
+    <div class="modal" id="role-delete">
+        <div class="modal__header">
+            <div class="modal__title">
+                <i class="icon-information orange d-flex mb-24"></i>
+                Подтверждение удаления</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="mb-16">
+                <p class="fs-16">Вы уверены, что хотите удалить выбранные роли? <br />Это действие невозможно отменить.</p>
+            </div>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary" data-fancybox-close>Удалить</button>
+            <button type="button" class="btn btn-outline" data-fancybox-close>Отменить</button>
+        </div>
+    </div>
+
+    <div class="modal" id="user-blocking">
+        <div class="modal__header">
+            <div class="modal__title">
+                <i class="icon-information orange d-flex mb-24"></i>
+                Подтверждение блокировки</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="mb-16">
+                <p class="fs-16">Вы уверены, что хотите заблокировать пользователя? <br />Позже вы всегда сможете разблокировать его</p>
+            </div>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary" data-fancybox-close>Заблокировать</button>
+            <button type="button" class="btn btn-outline" data-fancybox-close>Отменить</button>
+        </div>
+    </div>
+
+    <div class="modal" id="for-approval">
+        <div class="modal__header">
+            <div class="modal__title">
+                <i class="icon-success green d-flex mb-24"></i>
+                Изменения отправлены на<br />согласование</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="mb-16">
+                <p class="fs-16">Ваш запрос отправлен в ведомство.</p>
+            </div>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary" data-fancybox-close>Закрыть</button>
+        </div>
+    </div>
+
+    <div class="modal" id="failed">
+        <div class="modal__header">
+            <div class="modal__title">
+                <i class="icon-error red d-flex mb-24"></i>
+                Не удалось отправить запрос</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="mb-16">
+                <p class="fs-16">Попробуйте отправить запрос еще раз или повторите попытку позже. Если ситуация сохранится, обратитесь в службу технической поддержки.</p>
+            </div>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-primary" data-fancybox-close>Отправить еще раз</button>
+            <button type="button" class="btn btn-secondary" data-fancybox-close>Закрыть</button>
+        </div>
+    </div>
+    <div class="modal modal-xl" id="works">
+        <div class="modal__header">
+            <div class="modal__title">Назначенные работы</div>
+            <button type="button" class="modal__close" data-fancybox-close>
+                <i class="icon-cross"></i>
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="modal__row">
+                <div class="card card--modal">
+                    <div class="card__header">
+                        <div class="fs-16 fw-600 color-black mb-8">Доступные виды работ</div>
+                        <div class="position-relative">
+                            <button type="button" class="btn-field">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <label class="field field--sm">
+                                <input type="text" name="search_field" placeholder="Поиск">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__scroll">
+                            <div class="tree" data-tree>
+                                <div class="tree__node" data-tree-node>
+                                    <div class="tree__item" data-tree-item>
+                                        <div class="tree__checkbox">
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                <i class="checkbox__item"></i>
+                                            </label>
+                                        </div>
+                                        <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                        <div class="tree__text">МКД</div>
+                                        <button type="button" class="tree__control" data-tree-control></button>
+                                    </div>
+                                    <div class="tree__content" data-tree-content>
+                                        <div class="tree__node" data-tree-node>
+                                            <div class="tree__item" data-tree-item>
+                                                <div class="tree__checkbox">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                        <i class="checkbox__item"></i>
+                                                    </label>
+                                                </div>
+                                                <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                                <div class="tree__text">1.1 Электрика</div>
+                                                <button type="button" class="tree__control" data-tree-control></button>
+                                            </div>
+                                            <div class="tree__content" data-tree-content>
+                                                <div class="tree__node" data-tree-node>
+                                                    <div class="tree__item" data-tree-item>
+                                                        <div class="tree__checkbox">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                <i class="checkbox__item"></i>
+                                                            </label>
+                                                        </div>
+                                                        <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                                        <div class="tree__text">1.1.1 Выбивает автомат (пробки) при включении электроприборов, освещения;</div>
+                                                        <button type="button" class="tree__control" data-tree-control></button>
+                                                    </div>
+                                                    <div class="tree__content" data-tree-content>
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.1 Замена автомата</div>
+                                                                <button type="button" class="tree__control" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.2. Замена УЗО</div>
+                                                                <button type="button" class="tree__control" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                    </div>
+                                                </div><!-- .tree__node -->
+                                                <div class="tree__node" data-tree-node>
+                                                    <div class="tree__item" data-tree-item>
+                                                        <div class="tree__checkbox">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                <i class="checkbox__item"></i>
+                                                            </label>
+                                                        </div>
+                                                        <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                                        <div class="tree__text">1.1.2 Бьет током вода, бытовая техника;</div>
+                                                        <button type="button" class="tree__control" data-tree-control></button>
+                                                    </div>
+                                                    <div class="tree__content" data-tree-content>
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.1 Замена автомата</div>
+                                                                <button type="button" class="tree__control" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.2. Замена УЗО</div>
+                                                                <button type="button" class="tree__control" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                    </div>
+                                                </div><!-- .tree__node -->
+                                            </div>
+                                        </div><!-- .tree__node -->
+                                        <div class="tree__node" data-tree-node>
+                                            <div class="tree__item" data-tree-item>
+                                                <div class="tree__checkbox">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                        <i class="checkbox__item"></i>
+                                                    </label>
+                                                </div>
+                                                <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                                <div class="tree__text">1.2 Лифты;</div>
+                                                <button type="button" class="tree__control" data-tree-control></button>
+                                            </div>
+                                            <div class="tree__content" data-tree-content>
+                                                <div class="tree__node" data-tree-node>
+                                                    <div class="tree__item" data-tree-item>
+                                                        <div class="tree__checkbox">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                <i class="checkbox__item"></i>
+                                                            </label>
+                                                        </div>
+                                                        <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                                        <div class="tree__text">1.1.1 Выбивает автомат (пробки) при включении электроприборов, освещения;</div>
+                                                        <button type="button" class="tree__control" data-tree-control></button>
+                                                    </div>
+                                                    <div class="tree__content" data-tree-content>
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.1 Замена автомата</div>
+                                                                <button type="button" class="tree__control" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.2. Замена УЗО</div>
+                                                                <button type="button" class="tree__control" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                    </div>
+                                                </div><!-- .tree__node -->
+                                                <div class="tree__node" data-tree-node>
+                                                    <div class="tree__item" data-tree-item>
+                                                        <div class="tree__checkbox">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                <i class="checkbox__item"></i>
+                                                            </label>
+                                                        </div>
+                                                        <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                                        <div class="tree__text">1.1.2 Бьет током вода, бытовая техника;</div>
+                                                        <button type="button" class="tree__control" data-tree-control></button>
+                                                    </div>
+                                                    <div class="tree__content" data-tree-content>
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.1 Замена автомата</div>
+                                                                <button type="button" class="tree__control" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.2. Замена УЗО</div>
+                                                                <button type="button" class="tree__control" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                    </div>
+                                                </div><!-- .tree__node -->
+                                            </div>
+                                        </div><!-- .tree__node -->
+                                    </div>
+                                </div><!-- .tree__node -->
+                                <div class="tree__node" data-tree-node>
+                                    <div class="tree__item" data-tree-item>
+                                        <div class="tree__checkbox">
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                <i class="checkbox__item"></i>
+
+                                            </label>
+                                        </div>
+                                        <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                        <div class="tree__text">ДТ</div>
+                                        <button type="button" class="tree__control" data-tree-control></button>
+                                    </div>
+                                    <div class="tree__content" data-tree-content>
+                                        <div class="tree__node" data-tree-node>
+                                            <div class="tree__item" data-tree-item>
+                                                <div class="tree__checkbox">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                        <i class="checkbox__item"></i>
+                                                    </label>
+                                                </div>
+                                                <div class="tree__text">ДТ -1</div>
+                                                <button type="button" class="tree__control" data-tree-control></button>
+                                            </div>
+                                        </div><!-- .tree__node -->
+                                        <div class="tree__node" data-tree-node>
+                                            <div class="tree__item" data-tree-item>
+                                                <div class="tree__checkbox">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                        <i class="checkbox__item"></i>
+                                                    </label>
+                                                </div>
+                                                <div class="tree__text">ДТ -2</div>
+                                                <button type="button" class="tree__control" data-tree-control></button>
+                                            </div>
+                                        </div><!-- .tree__node -->
+                                    </div>
+                                </div><!-- .tree__node -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="d-flex column-gap-16">
+                            <button type="button" class="btn btn-sm btn-primary flex-1">Добавить</button>
+                            <button type="button" class="btn btn-sm btn-outline flex-1">Добавить все</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--modal">
+                    <div class="card__header">
+                        <div class="fs-16 fw-600 color-black mb-8">Назначенные виды работ</div>
+                        <div class="position-relative">
+                            <button type="button" class="btn-field">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <label class="field field--sm">
+                                <input type="text" name="search_field" placeholder="Поиск">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__scroll">
+                            <div class="tree" data-tree>
+                                <div class="tree__node" data-tree-node>
+                                    <div class="tree__item" data-tree-item>
+                                        <div class="tree__checkbox">
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                <i class="checkbox__item"></i>
+                                            </label>
+                                        </div>
+                                        <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                        <div class="tree__text">МКД</div>
+                                        <button type="button" class="tree__control remove" data-tree-control></button>
+                                    </div>
+                                    <div class="tree__content" data-tree-content>
+                                        <div class="tree__node" data-tree-node>
+                                            <div class="tree__item" data-tree-item>
+                                                <div class="tree__checkbox">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                        <i class="checkbox__item"></i>
+                                                    </label>
+                                                </div>
+                                                <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                                <div class="tree__text">1.1 Электрика</div>
+                                                <button type="button" class="tree__control remove" data-tree-control></button>
+                                            </div>
+                                            <div class="tree__content" data-tree-content>
+                                                <div class="tree__node" data-tree-node>
+                                                    <div class="tree__item" data-tree-item>
+                                                        <div class="tree__checkbox">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                <i class="checkbox__item"></i>
+                                                            </label>
+                                                        </div>
+                                                        <button type="button" class="tree__toggle" data-tree-toggle></button>
+                                                        <div class="tree__text">1.1.1 Выбивает автомат (пробки) при включении электроприборов, освещения;</div>
+                                                        <button type="button" class="tree__control remove" data-tree-control></button>
+                                                    </div>
+                                                    <div class="tree__content" data-tree-content>
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.1 Замена автомата</div>
+                                                                <button type="button" class="tree__control remove" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                        <div class="tree__node" data-tree-node>
+                                                            <div class="tree__item" data-tree-item>
+                                                                <div class="tree__checkbox">
+                                                                    <label class="checkbox">
+                                                                        <input type="checkbox" name="checkbox" class="checkbox__input"  data-tree-check>
+                                                                        <i class="checkbox__item"></i>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="tree__text">1.1.1.2. Замена УЗО</div>
+                                                                <button type="button" class="tree__control remove" data-tree-control></button>
+                                                            </div>
+                                                        </div><!-- .tree__node -->
+                                                    </div>
+                                                </div><!-- .tree__node -->
+                                            </div>
+                                        </div><!-- .tree__node -->
+                                    </div>
+                                </div><!-- .tree__node -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="d-flex column-gap-16">
+                            <button type="button" class="btn btn-secondary flex-1">Удалить</button>
+                            <button type="button" class="btn btn-outline flex-1">Удалить все</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__footer">
+            <button type="button" class="btn btn-sm btn-primary">Сохранить</button>
+            <button type="button" class="btn btn-sm btn-outline" data-fancybox-close>Отменить</button>
+        </div>
+    </div>
+</div>

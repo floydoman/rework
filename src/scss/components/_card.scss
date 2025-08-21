@@ -1,0 +1,49 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: rel(12);
+    border: 1px solid #7C8591;
+
+    &__header {
+        padding: rel(16);
+        border-bottom: 1px solid #7C8591;
+    }
+
+    &__footer {
+        padding: rel(16);
+        border-top: 1px solid #7C8591;
+    }
+
+    &__body {
+        position: relative;
+        min-height: rel(120);
+        flex-grow: 1;
+    }
+
+    &__scroll {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: rel(8);
+            height: rel(8);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #6D7682;
+            border-radius: rel(8);
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+    }
+
+    &--modal {
+        min-height: 64.741vh;
+    }
+}

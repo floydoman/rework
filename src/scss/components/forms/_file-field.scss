@@ -1,0 +1,48 @@
+.file-field {
+    cursor: pointer;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: rel(16);
+    line-height: rel(17);
+    max-width: 100%;
+    font-weight: 400;
+    padding: rel(4) rel(12);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    height: rel(56);
+    align-items: center;
+    fill: var(--green);
+    color: var(--green);
+    text-decoration: none;
+    background: #F3F4F8;
+    column-gap: rel(10);
+
+    &:hover {
+        fill: var(--green);
+        color: var(--green);
+        text-decoration: none;
+    }
+
+    input {
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    &__icon {
+        font-size: 0;
+        line-height: 0;
+        height: rel(24);
+        flex-shrink: 0;
+    }
+
+    &__name {
+        border-bottom: 1px dashed var(--green-1);
+    }
+}

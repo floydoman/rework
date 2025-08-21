@@ -1,0 +1,10 @@
+
+.container,
+.container-fluid {
+    padding-left: rel(32);
+    padding-right: rel(32);
+
+    @include media-breakpoint-up(xl) {
+
+    }
+}

@@ -1,0 +1,26 @@
+[data-collapse] {
+
+    &.open {
+
+        [data-collapse-content] {
+        }
+
+        [data-collapse-control] {
+
+            &:before {
+                content: attr(data-collapse-close);
+            }
+        }
+    }
+}
+
+[data-collapse-content] {
+    display: none;
+}
+
+[data-collapse-control] {
+
+    &:before {
+        content: attr(data-collapse-open);
+    }
+}

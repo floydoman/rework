@@ -1,0 +1,113 @@
+.modal {
+    padding: 0;
+    color: var(--black);
+    max-width: rel(512);
+    border-radius: rel(24);
+    background-color: white;
+    font-family: var(--font-primary);
+    box-shadow: 0 0 0 4px rgba(28, 123, 255, 0.15);
+
+    &__header {
+        position: relative;
+        padding: rel(24) rel(64) rel(8) rel(24);
+    }
+
+    &__close {
+        top: rel(20);
+        right: rel(20);
+        padding: 0;
+        fill: black;
+        font-size: 0;
+        line-height: 0;
+        width: rel(40);
+        height: rel(40);
+        cursor: pointer;
+        position: absolute;
+        border-radius: rel(8);
+        background-color: #F5F6F7;
+        border: 1px solid #F5F6F7;
+        transition: var(--transition-time);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            width: rel(20);
+            height: rel(20);
+            flex-shrink: 0;
+            display: block;
+        }
+
+        &:hover {
+            border-color: rgba(0, 0, 0, 0.15);
+            transition: var(--transition-time);
+        }
+
+        &:active {
+            border-color: #F5F6F7;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: rel(20);
+        line-height: rel(28);
+        i:before {
+            font-size: rel(48);
+        }
+    }
+
+    &__body {
+        padding: rel(24);
+    }
+
+    &__footer {
+        padding: rel(20) rel(24);
+        border-top: 1px solid #E6E9ED;
+        display: flex;
+        column-gap: rel(16);
+        align-items: center;
+    }
+
+    &__row {
+        display: grid;
+        grid-row-gap: rel(24);
+        grid-column-gap: rel(24);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: rel(512);
+
+        &.w-736 {
+            width: rel(736);
+            max-width: rel(736);
+        }
+        &__header {
+            padding: rel(24) rel(64) rel(8) rel(40);
+        }
+
+        &__title {
+            font-size: rel(26);
+            line-height: rel(32);
+        }
+
+        &__body {
+            padding: rel(24) rel(40);
+        }
+
+        &__footer {
+            padding: rel(20) rel(40);
+        }
+    }
+}
+
+.modal-xl {
+    width: 100%;
+    min-width: rel(1200);
+    max-width: rel(1440);
+}
+
+.fancybox__backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}

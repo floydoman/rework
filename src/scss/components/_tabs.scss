@@ -1,0 +1,119 @@
+[data-tabs-target] {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.tabs-control {
+    display: flex;
+    column-gap: rel(4);
+    align-items: center;
+    position: relative;
+    overflow-x: auto;
+ //   width: calc(100% - 260px);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+
+    &:before {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        height: 1px;
+        position: absolute;
+        background-color: #E6E9ED;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #717985;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--gray-light);
+        border: 1px solid var(--gray-light);
+    }
+}
+
+.tabs-nav {
+    z-index: 10;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: rel(16);
+    line-height: rel(20);
+    min-height: rel(48);
+    padding: rel(4) rel(12);
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    column-gap: rel(8);
+    align-items: center;
+
+    &:before {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        height: 2px;
+        position: absolute;
+        background-color: var(--blue);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__title {
+        display: block;
+    }
+
+    &__num {
+        padding: 0 rel(4);
+        min-width: rel(20);
+        line-height: rel(20);
+        border-radius: rel(20);
+        background-color: #F5F6F7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    &.active {
+
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tabs-nav {
+
+            &__title {
+                font-weight: 500;
+            }
+
+            &__num {
+                color: white;
+                background-color: var(--red);
+            }
+        }
+    }
+}
+
+.tabs-nav-red {
+    min-height: rel(40);
+
+    &:before {
+        background-color: var(--red);
+    }
+}

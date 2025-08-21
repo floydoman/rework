@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta property="og:image" content="images/dest/preview.jpg">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="css/main.min.css">
+    {% endblock %}
+</head>
+<body>
+<div class="root" data-fullscreen>
+    {% block header %}
+        <header class="header">
+            <a href="/" class="header__logo">
+                <strong>Единый </strong>
+                <span>реестр заданий</span>
+            </a>
+            <div class="header__nav">
+                <a href="registry.html" class="header__link {% if registry %}active{% endif %}">Задания</a>
+                <a href="access.html" class="header__link {% if administration %}active{% endif %}">Администрирование</a>
+                <a href="employee.html" class="header__link {% if nsi %}active{% endif %}">НСИ</a>
+                <div data-dropdown>
+                    <a class="header__link {% if logging_log %}active{% endif %}" data-dropdown-toggle>
+                        <span>Журналы</span>
+                    </a>
+                    <div class="dropdown-content" data-dropdown-content="">
+                        <a href="integration-log.html" class="dropdown-link">
+                            <span>Журнал интеграционный</span>
+                        </a>
+                        <a href="logging-log.html" class="dropdown-link">
+                            <span>Журнал логирования</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="discharge.html" class="header__link {% if discharge %}active{% endif %}">Выгрузка</a>
+            </div>
+            <div class="header__content">
+                <a href="#" class="header__link">Аналитика</a>
+                <div data-dropdown>
+                    <a href="#" class="header__auth header-auth" data-dropdown-toggle>
+                        <span class="header-auth__name">Елена И.</span>
+
+                        <i class="header-auth__button">
+                            <i class="icon-personfill"></i>
+                        </i>
+                    </a>
+                    <div class="dropdown-content" data-dropdown-content="">
+                        <a href="#" class="dropdown-link" data-src="#setting-notifications" data-fancybox="">
+                            <span>Настройка уведомления</span>
+                        </a>
+                        <a href="#" class="dropdown-link" data-src="#user-info" data-fancybox="">
+                            <span>Сведения о пользователе</span>
+                        </a>
+                        <a href="#" class="dropdown-link">
+                            <span>Выйти</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+    {% endblock %}
+    {% block main %}
+        <section class="main"{% if tabs %} data-tabs{% endif %}>
+            {% block nav %}
+                <aside class="aside {% if (aside==false) %}hide{% endif %}">
+                    <div class="aside__nav">
+                        {% if registry %}
+                            <a href="#" class="aside__link">
+                                <i class="icon-tileslarge"></i>
+                                <span>Все задания</span>
+                            </a>
+                            <a href="#" class="aside__link active">
+                                <i class="icon-tileslarge"></i>
+                                <span>Мои задания</span>
+                            </a>
+                            <a href="#" class="aside__link">
+                                <i class="icon-tileslarge"></i>
+                                <span>Задания моих сотрудников</span>
+                            </a>
+                            <a href="#" class="aside__link">
+                                <i class="icon-tileslarge"></i>
+                                <span>Исполнитель не назначен</span>
+                            </a>
+                            <a href="#" class="aside__link">
+                                <i class="icon-tileslarge"></i>
+                                <span>История</span>
+                            </a>
+                        {% endif %}
+                        {% if administration %}
+                            <a href="access.html" class="aside__link {% if access %}active{% endif %}">
+                                <i class="icon-tileslarge"></i>
+                                <span>Доступы</span>
+                            </a>
+                            <a href="roles.html" class="aside__link {% if roles %}active{% endif %}">
+                                <i class="icon-tileslarge"></i>
+                                <span>Роли</span>
+                            </a>
+                            <a href="users.html" class="aside__link {% if users %}active{% endif %}">
+                                <i class="icon-tileslarge"></i>
+                                <span>Пользователи</span>
+                            </a>
+                        {% endif %}
+                        {% if nsi %}
+                            <a href="employee.html" class="aside__link {% if employee %}active{% endif %}">
+                                <i class="icon-tileslarge"></i>
+                                <span>Сотрудники</span>
+                            </a>
+                            <a href="workshops.html" class="aside__link {% if workshops %}active{% endif %}">
+                                <i class="icon-tileslarge"></i>
+                                <span>Мастерские участки</span>
+                            </a>
+                            <a href="waste-accumulation.html" class="aside__link {% if waste_accumulation %}active{% endif %}">
+                                <i class="icon-tileslarge"></i>
+                                <span>Места накопления отходов</span>
+                            </a>
+                            <a href="courtyard-territories.html" class="aside__link {% if courtyard_territories %}active{% endif %}">
+                                <i class="icon-tileslarge"></i>
+                                <span>Дворовые территории</span>
+                            </a>
+                        {% endif %}
+
+                    </div>
+                    <div class="aside__footer">
+                        <button type="button" class="aside__toggle" data-aside-toggle>
+                            <i class="icon-chevrons-right"></i>
+                        </button>
+                    </div>
+                </aside>
+            {% endblock %}
+            <div class="content {% if (aside==false) %}full-width{% endif %}">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </section>
+    {% endblock %}
+    {% block footer %}
+
+    {% endblock %}
+    {% block offcanvas %}
+        {% include "src/elements/offcanvas.njk" %}
+    {% endblock %}
+    {% block modal %}
+        {% include "src/elements/modal.njk" %}
+    {% endblock %}
+    {% block alert %}
+        {% include "src/elements/alert.njk" %}
+    {% endblock %}
+</div>
+{% block scripts %}
+    <script src="js/app.min.js"></script>
+{% endblock %}
+{% block pageScript %}
+
+{% endblock %}
+</body>
+</html>

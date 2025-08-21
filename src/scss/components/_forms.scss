@@ -1,0 +1,97 @@
+@import 'forms/inputs';
+@import 'forms/checkboxes';
+@import 'forms/radiobuttons';
+@import 'forms/date-range-picker';
+@import 'forms/file-field';
+
+.form-group {
+    margin-bottom: rel(16);
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    font-size: rel(16);
+    line-height: rel(24);
+    margin-bottom: rel(8);
+}
+
+.form-inline {
+    padding: rel(12) 0;
+    border-bottom: 1px solid #E6E9ED;
+    display: flex;
+    row-gap: rel(8);
+    column-gap: rel(16);
+    flex-direction: column;
+
+
+    &__label {
+        color: #475467;
+        font-size: rel(14);
+        line-height: rel(20);
+    }
+
+    @include media-breakpoint-up(md) {
+        align-items: center;
+         flex-direction: row;
+
+        &__label {
+            width: rel(250);
+            flex-shrink: 0;
+        }
+
+        &__content {
+            width: calc(100% - 266px);
+            flex-shrink: 0;
+        }
+    }
+}
+
+.form-content {
+    width: 100%;
+    font-size: rel(16);
+    line-height: rel(24);
+    word-break: break-all;
+}
+
+.option {
+    display: flex;
+    row-gap: rel(12);
+    align-items: flex-start;
+    flex-direction: column;
+
+    &__content {
+        display: none;
+        color: #475467;
+        padding-left: rel(32);
+        font-size: rel(14);
+    }
+
+    &__value {
+        display: none;
+    }
+
+    &.checked {
+
+        .option {
+
+            &__content {
+                display: flex;
+                row-gap: rel(12);
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    }
+
+    &.selected {
+
+        .option {
+
+            &__value {
+                display: block;
+            }
+
+        }
+    }
+}

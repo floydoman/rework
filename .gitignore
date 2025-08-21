@@ -1,0 +1,26 @@
+__MACOSX
+.Saved
+_arc
+bower_components
+node_modules
+.vscode
+.publish
+.DS_Store
+.editorconfig
+*.log
+*.sublime-*
+*.rar
+*.zip
+ex_files
+Thumbs.db
+
+/.git/
+/**/Thumbs.db
+/**/*.DS_Store
+/**/package-lock.json
+/**/yarn.lock
+
+# IntellijIdea files
+*.iml
+.idea/
+out

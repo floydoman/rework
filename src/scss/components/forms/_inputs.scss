@@ -1,0 +1,169 @@
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input, textarea {
+    outline: none;
+    &:focus:required:invalid { border-color: red }
+    &:required:valid { border-color: green }
+}
+
+:active, :hover, :focus {
+    outline: 0 !important;
+    outline-offset: 0 !important;
+}
+
+option::selection {background: #ccc;}
+option::-moz-selection {background: #ccc;}
+option::-webkit-selection {background: #ccc; color:#fff;}
+
+.field {
+    width: 100%;
+    display: block;
+    font-weight: 400;
+    position: relative;
+    background: transparent;
+    $input-selector: "input[type=text], input[type=email], input[type=phone], input[type=number] input[type=password], textarea";
+
+    #{$input-selector} {
+        margin: 0;
+        width: 100%;
+        height: rel(48);
+        outline: none;
+        color: var(--text-primary);
+        box-shadow: none;
+        font-weight: 400;
+        font-size: rel(16);
+        line-height: rel(24);
+        padding: rel(11) rel(16);
+        background: #fff;
+        border-radius: rel(8);
+        display: block;
+        vertical-align: middle;
+        border: rel(1) solid #7C8591;
+        transition: var(--transition-time);
+        &::placeholder {
+            color: #5D6570;
+        }
+
+        &::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        &:hover {
+            border-color: #003099;
+            transition: var(--transition-time);
+        }
+
+        &:focus,
+        &:active {
+            outline: none;
+            border-color: #003099;
+            box-shadow: 0 0 0 4px #1C7BFF;
+            transition: var(--transition-time);
+
+            &::placeholder {
+                color:transparent;
+            }
+        }
+        &:disabled {
+            background: var(--gray-light);
+        }
+
+    }
+
+    &.error {
+
+        #{$input-selector} {
+            border-color: red !important;
+        }
+    }
+    .error-text {
+        color: red !important;
+        font-size: rel(14);
+        display: flex;
+        align-items: center;
+        gap: rel(5);
+        i:before {
+            font-size: rel(14);
+        }
+    }
+
+    &--icon {
+        #{$input-selector} {
+            padding-left: rel(48);
+        }
+    }
+
+    &__icon {
+        top: rel(12);
+        left: rel(16);
+        display: block;
+        width: rel(24);
+        height: rel(24);
+        position: absolute;
+        fill: #0044CC;
+    }
+    #{"input[name=search]"} {
+        padding: rel(10) rel(16) rel(10) rel(48);
+    }
+
+    &--sm {
+
+        #{$input-selector} {
+            height: rel(40);
+            font-size: rel(16);
+            line-height: rel(24);
+            padding: rel(7) rel(16);
+        }
+    }
+}
+
+.field-sm {
+    max-width: rel(144);
+}
+
+.field-md {
+    max-width: rel(194);
+}
+
+
+.btn-field {
+    top: 0;
+    right: 0;
+    width: rel(40);
+    height: rel(40);
+    z-index: 20;
+    padding: 0;
+    font-size: 0;
+    border: none;
+    outline: none;
+    line-height: 0;
+    cursor: pointer;
+    fill: var(--blue);
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+        flex-shrink: 0;
+        display: inline-block;
+        height: rel(16);
+    }
+}
+
+.btn-field + .field {
+    $input-selector: "input[type=text], input[type=email], input[type=phone], input[type=number] input[type=password], textarea";
+
+    #{$input-selector} {
+        padding-right: rel(48);
+    }
+}

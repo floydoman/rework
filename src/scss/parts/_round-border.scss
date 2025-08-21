@@ -1,0 +1,21 @@
+.round-border {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--text-primary);
+    padding: 2rem;
+    border-radius: 1.2rem;
+    border: 1px solid #BCC4CF;
+    display: flex;
+    align-items: center;
+    a {
+        cursor: pointer;
+        color: var(--blue);
+        display: inline-flex;
+        background: transparent;
+        text-decoration: none;
+        &:hover {
+            color: var(--blue);
+            text-decoration: underline;
+        }
+    }
+}

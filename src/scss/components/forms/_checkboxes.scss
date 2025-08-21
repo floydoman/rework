@@ -1,0 +1,86 @@
+.checkbox {
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary);
+    font-size: rel(16);
+    line-height: rel(20);
+    font-weight: 400;
+    position: relative;
+    display: flex;
+    column-gap: rel(12);
+    align-items: flex-start;
+
+    &__input {
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        position: absolute;
+
+        &:checked + .checkbox__item {
+            border-color: #003099;
+            background-color: #003099;
+
+            &:before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &:indeterminate + .checkbox__item {
+            border-color: #003099;
+            background-color: #003099;
+
+            &:before {
+                height: rel(2);
+                width: rel(12);
+                background: white !important;
+                background-image: none;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &:disabled + .checkbox__label {
+            opacity: 0.6;
+            cursor: default;
+        }
+    }
+
+    &__item {
+        width: rel(20);
+        height: rel(20);
+        border-radius: rel(4);
+        position: relative;
+        border: 1px solid #7C8591;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:before {
+            z-index: 1;
+            content: '';
+            width: rel(18);
+            height: rel(18);
+            flex-shrink: 0;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAnIGhlaWdodD0nMjAnIHZpZXdCb3g9JzAgMCAyMCAyMCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBmaWxsLXJ1bGU9J2V2ZW5vZGQnIGNsaXAtcnVsZT0nZXZlbm9kZCcgZD0nTTUuMTMyOTUgMTAuNDQxNUM0Ljk1NTY4IDEwLjI1MzUgNC45NTU2OCA5Ljk0NzQ5IDUuMTMyOTUgOS43NTc0OUw1Ljc3NTY4IDkuMDc0NDlDNS45NTI5NSA4Ljg4NjQ5IDYuMjQxMTMgOC44ODY0OSA2LjQxODQgOS4wNzQ0OUw4LjYzNjU3IDExLjQ2NjVMMTMuNTgxMSA2LjE0MTQ5QzEzLjc1ODQgNS45NTM0OSAxNC4wNDY1IDUuOTUzNDkgMTQuMjIzOCA2LjE0MTQ5TDE0Ljg2NjUgNi44MjU0OUMxNS4wNDM4IDcuMDEzNDkgMTUuMDQzOCA3LjMyMDQ5IDE0Ljg2NjUgNy41MDc0OUw4Ljk1NzQ4IDEzLjg1ODVDOC43ODAyMSAxNC4wNDY1IDguNDkyMDMgMTQuMDQ2NSA4LjMxNDc2IDEzLjg1ODVMNS4xMzI5NSAxMC40NDE1WicgZmlsbD0nd2hpdGUnLz48L3N2Zz4=");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &--md {
+        padding: rel(8) rel(16);
+    }
+}

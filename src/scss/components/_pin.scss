@@ -1,0 +1,13 @@
+.pin {
+    width: 100%;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rel(12);
+    &--alert {
+        i:before {
+            font-size: rel(20);
+        }
+    }
+}

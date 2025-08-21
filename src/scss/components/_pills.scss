@@ -1,0 +1,54 @@
+.pills {
+    display: flex;
+    align-items: center;
+    column-gap: rel(9);
+    position: relative;
+    overflow-x: auto;
+    //   width: calc(100% - 260px);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #717985;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--gray-light);
+        border: 1px solid var(--gray-light);
+    }
+
+    &-control {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: rel(20);
+    }
+    &-element {
+        display: flex;
+        font-size: rel(14);
+        background-color: #F5F6F7;
+        border-radius: rel(8);
+        padding: rel(10) rel(14);
+        align-items: center;
+        column-gap: rel(6);
+    }
+    &-title {
+        white-space: nowrap;
+        display: block;
+    }
+    &-list {
+        text-wrap: nowrap;
+    }
+    &-reset {
+        font-size: rel(14);
+        color: #003099;
+        text-decoration: none;
+    }
+}

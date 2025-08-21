@@ -1,0 +1,66 @@
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+
+@mixin focus-visible {
+    @if (&) {
+        .js-focus-visible &:focus:not(.focus-visible) {
+            @content;
+        }
+    }
+
+    @else {
+        .js-focus-visible :focus:not(.focus-visible) {
+            outline: none;
+        }
+    }
+}
+
+@mixin placeholder($color: $input-color-placeholder) {
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+    &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+    &::placeholder { color: $color; }
+}
+
+// Clearfix
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@function max($numbers...) {
+    @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}

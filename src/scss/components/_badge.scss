@@ -1,0 +1,75 @@
+.badge {
+    height: rel(36);
+    font-weight: rel(500);
+    font-size: rel(14);
+    line-height: rel(20);
+    border-radius: rel(8);
+    padding: rel(8) rel(12);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    column-gap: rel(6);
+
+    &--gray {
+        color: #344054;
+        background-color: #F2F4F7;
+
+        .point {
+            background-color: #667085;
+        }
+    }
+
+    &--blue {
+        color: #026AA2;
+        background-color: #F0F9FF;
+
+        .point {
+            background-color: #026AA2;
+        }
+    }
+
+    &--violet {
+        color: #5925DC;
+        background-color: #F4F3FF;
+
+        .point {
+            background-color: #5925DC;
+        }
+    }
+
+    &--orange {
+        color: #B54708;
+        background-color: #FFFAEB;
+
+        .point {
+            background-color: #F79009;
+        }
+    }
+
+    &--red {
+        color: #B42318;
+        background-color: #FEF3F2;
+
+        .point {
+            background-color: #F04438;
+        }
+    }
+
+    &--green {
+        color: #027A48;
+        background-color: #ECFDF3;
+
+        .point {
+            background-color: #12B76A;
+        }
+    }
+}
+
+
+.point {
+    width: 6px;
+    height: 6px;
+    display: block;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
