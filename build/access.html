@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>10094 дворовых территорий</title>
+  <title>Всего 104 доступа</title>
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -24,8 +24,8 @@
       </a>
       <div class="header__nav">
         <a href="registry.html" class="header__link ">Задания</a>
-        <a href="access.html" class="header__link ">Администрирование</a>
-        <a href="employee.html" class="header__link active">НСИ</a>
+        <a href="access.html" class="header__link active">Администрирование</a>
+        <a href="employee.html" class="header__link ">НСИ</a>
         <div data-dropdown>
           <a class="header__link " data-dropdown-toggle>
             <span>Журналы</span>
@@ -68,29 +68,25 @@
     </header>
 
 
-    <section class="main">
+    <section class="main" data-tabs>
 
       <aside class="aside ">
         <div class="aside__nav">
 
 
+          <a href="access.html" class="aside__link active">
+            <i class="icon-tileslarge"></i>
+            <span>Доступы</span>
+          </a>
+          <a href="roles.html" class="aside__link ">
+            <i class="icon-tileslarge"></i>
+            <span>Роли</span>
+          </a>
+          <a href="users.html" class="aside__link ">
+            <i class="icon-tileslarge"></i>
+            <span>Пользователи</span>
+          </a>
 
-          <a href="employee.html" class="aside__link ">
-            <i class="icon-tileslarge"></i>
-            <span>Сотрудники</span>
-          </a>
-          <a href="workshops.html" class="aside__link active">
-            <i class="icon-tileslarge"></i>
-            <span>Мастерские участки</span>
-          </a>
-          <a href="waste-accumulation.html" class="aside__link ">
-            <i class="icon-tileslarge"></i>
-            <span>Места накопления отходов</span>
-          </a>
-          <a href="courtyard-territories.html" class="aside__link ">
-            <i class="icon-tileslarge"></i>
-            <span>Дворовые территории</span>
-          </a>
 
 
         </div>
@@ -117,31 +113,16 @@
               </form>
             </div>
             <div class="page-bar__items">
-              <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
-                <i class="icon-filter"></i>
-              </button>
-              <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="settings">
-                <i class="icon-gear"></i>
-              </button>
-              <button type="button" class="btn btn-primary" data-src="#export-registry" data-fancybox="">
-                <i class="icon-download"></i>
-                <span>Экспорт</span>
-              </button>
-              <button type="button" class="btn btn-primary">
-                <i class="icon-plus"></i>
-                <span>Добавить</span>
-              </button>
-              <button type="button" class="btn btn-secondary">
-                <i class="icon-pin"></i>
-                <span>Карта</span>
+              <button type="button" class="btn btn-primary" data-src="#access-delete" data-fancybox="">
+                <i class="icon-trashcan"></i>
+                <span>Удалить</span>
               </button>
             </div>
           </div>
         </div><!-- .page-header -->
 
-
         <div class="table-responsive">
-          <table id="workshopsTable" class="table">
+          <table id="tableAccess" class="table">
             <thead>
               <tr>
                 <th>
@@ -150,164 +131,128 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </th>
-                <th>
-                  ID
-
-                </th>
-                <th>
-                  Организация
-
-                </th>
-                <th>
-                  Тип обслуживаемых объектов
-
-                </th>
-                <th>
-                  Начальник подразделения
-
-                </th>
-                <th>
-                  Обслуживаемые объекты
-
-                </th>
+                <th class="text-nowrap">Идентификатор</th>
+                <th class="text-nowrap">Код</th>
+                <th class="text-nowrap">Наименование</th>
+                <th class="text-nowrap">Описание</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr data-offcanvas-target-click="access_view" class="selected">
                 <td>
                   <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <input type="checkbox" class="checkbox__input" name="setting-item" checked>
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">001579451</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">193</td>
+                <td class="text-nowrap">notice_push_close</td>
+                <td class="text-nowrap">Push Аварийная заявка</td>
+                <td class="text-nowrap">Описание доступа в несколько строк,
+                  <br />несколько строк
+                </td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="access_view" class="selected">
                 <td>
                   <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <input type="checkbox" class="checkbox__input" name="setting-item" checked>
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">193</td>
+                <td class="text-nowrap">notice_push_close</td>
+                <td class="text-nowrap">Push Аварийная заявка</td>
+                <td class="text-nowrap">Описание доступа в несколько строк,
+                  <br />несколько строк
+                </td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="access_view" class="selected">
                 <td>
                   <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <input type="checkbox" class="checkbox__input" name="setting-item" checked>
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">193</td>
+                <td class="text-nowrap">notice_push_close</td>
+                <td class="text-nowrap">Push Аварийная заявка</td>
+                <td class="text-nowrap">Описание доступа в несколько строк,
+                  <br />несколько строк
+                </td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="access_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">193</td>
+                <td class="text-nowrap">notice_push_close</td>
+                <td class="text-nowrap">Push Аварийная заявка</td>
+                <td class="text-nowrap">Описание доступа в несколько строк,
+                  <br />несколько строк
+                </td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="access_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">193</td>
+                <td class="text-nowrap">notice_push_close</td>
+                <td class="text-nowrap">Push Аварийная заявка</td>
+                <td class="text-nowrap">Описание доступа в несколько строк,
+                  <br />несколько строк
+                </td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="access_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">193</td>
+                <td class="text-nowrap">notice_push_close</td>
+                <td class="text-nowrap">Push Аварийная заявка</td>
+                <td class="text-nowrap">Описание доступа в несколько строк,
+                  <br />несколько строк
+                </td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="access_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">193</td>
+                <td class="text-nowrap">notice_push_close</td>
+                <td class="text-nowrap">Push Аварийная заявка</td>
+                <td class="text-nowrap">Описание доступа в несколько строк,
+                  <br />несколько строк
+                </td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="access_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
+                <td class="text-nowrap">193</td>
+                <td class="text-nowrap">notice_push_close</td>
+                <td class="text-nowrap">Push Аварийная заявка</td>
+                <td class="text-nowrap">Описание доступа в несколько строк,
+                  <br />несколько строк
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
-                </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
               </tr>
             </tbody>
           </table>
         </div><!-- .table-responsive -->
-
-
 
         <div class="page-nav">
           <ol class="pagination">
@@ -349,6 +294,7 @@
             </div>
           </div>
         </div><!-- .page-nav -->
+
 
       </div>
     </section>

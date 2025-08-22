@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>10094 дворовых территорий</title>
+  <title>Всего 104 сотрудника</title>
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -75,11 +75,11 @@
 
 
 
-          <a href="employee.html" class="aside__link ">
+          <a href="employee.html" class="aside__link active">
             <i class="icon-tileslarge"></i>
             <span>Сотрудники</span>
           </a>
-          <a href="workshops.html" class="aside__link active">
+          <a href="workshops.html" class="aside__link ">
             <i class="icon-tileslarge"></i>
             <span>Мастерские участки</span>
           </a>
@@ -127,21 +127,16 @@
                 <i class="icon-download"></i>
                 <span>Экспорт</span>
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="icon-plus"></i>
-                <span>Добавить</span>
-              </button>
-              <button type="button" class="btn btn-secondary">
-                <i class="icon-pin"></i>
-                <span>Карта</span>
+              <button type="button" class="btn btn-primary" data-src="#employee-delete" data-fancybox="">
+                <i class="icon-trashcan"></i>
+                <span>Удалить</span>
               </button>
             </div>
           </div>
         </div><!-- .page-header -->
 
-
         <div class="table-responsive">
-          <table id="workshopsTable" class="table">
+          <table id="table" class="table">
             <thead>
               <tr>
                 <th>
@@ -150,41 +145,147 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </th>
+                <th class="text-nowrap">ID</th>
+                <th class="text-nowrap">ФИО</th>
                 <th>
-                  ID
-
+                  <div class="table-sorter">
+                    <span>Организация</span>
+                  </div>
                 </th>
                 <th>
-                  Организация
-
+                  <div class="table-sorter">
+                    <span>Подразделение</span>
+                  </div>
                 </th>
                 <th>
-                  Тип обслуживаемых объектов
-
+                  <div class="table-sorter">
+                    <span>Должность</span>
+                  </div>
+                </th>
+                <th class="text-nowrap">СНИЛС</th>
+                <th class="text-nowrap">
+                  Дата приема
+                  <br>
+                  на работу
                 </th>
                 <th>
-                  Начальник подразделения
-
+                  <div class="table-sorter">
+                    <span>Статус</span>
+                  </div>
                 </th>
                 <th>
-                  Обслуживаемые объекты
-
+                  <div class="table-sorter">
+                    <span>График сменности</span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Дата последнего
+                  <br>
+                  закрытия задания
+                </th>
+                <th class="text-nowrap">
+                  Доступные виды работ
+                </th>
+                <th class="text-nowrap">
+                  Дата
+                  <br>
+                  создания карточки
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="selected">
                 <td>
                   <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <input type="checkbox" class="checkbox__input" name="setting-item" checked>
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">001579451</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">
+                  04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование
+                  <br>подразделения
+                </td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                  <div class="badge badge--gray">
+                    <div class="point"></div>
+                    <span>Больничный</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов
+                  <br>работ
+                </td>
+                <td class="text-nowrap">12.12.2023</td>
+              </tr>
+              <tr class="selected">
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item" checked>
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">
+                  04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование
+                  <br>подразделения
+                </td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                  <div class="badge badge--violet">
+                    <div class="point"></div>
+                    <span>Работа</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов
+                  <br>работ
+                </td>
+                <td class="text-nowrap">12.12.2023</td>
+              </tr>
+              <tr class="selected">
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item" checked>
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">
+                  04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование
+                  <br>подразделения
+                </td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                  <div class="badge badge--violet">
+                    <div class="point"></div>
+                    <span>Работа</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов
+                  <br>работ
+                </td>
+                <td class="text-nowrap">12.12.2023</td>
               </tr>
               <tr>
                 <td>
@@ -193,11 +294,29 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">
+                  04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование
+                  <br>подразделения
+                </td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                  <div class="badge badge--violet">
+                    <div class="point"></div>
+                    <span>Работа</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов
+                  <br>работ
+                </td>
+                <td class="text-nowrap">12.12.2023</td>
               </tr>
               <tr>
                 <td>
@@ -206,11 +325,29 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">
+                  04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование
+                  <br>подразделения
+                </td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                  <div class="badge badge--violet">
+                    <div class="point"></div>
+                    <span>Работа</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов
+                  <br>работ
+                </td>
+                <td class="text-nowrap">12.12.2023</td>
               </tr>
               <tr>
                 <td>
@@ -219,11 +356,29 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">
+                  04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование
+                  <br>подразделения
+                </td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                  <div class="badge badge--orange">
+                    <div class="point"></div>
+                    <span>Отпуск</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов
+                  <br>работ
+                </td>
+                <td class="text-nowrap">12.12.2023</td>
               </tr>
               <tr>
                 <td>
@@ -232,11 +387,29 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">
+                  04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование
+                  <br>подразделения
+                </td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                  <div class="badge badge--red">
+                    <div class="point"></div>
+                    <span>Отсутствие</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов
+                  <br>работ
+                </td>
+                <td class="text-nowrap">12.12.2023</td>
               </tr>
               <tr>
                 <td>
@@ -245,69 +418,33 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
+                <td class="text-nowrap">
+                  04582103
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование
+                  <br>подразделения
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
                 <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
+                  <div class="badge badge--gray">
+                    <div class="point"></div>
+                    <span>Больничный</span>
+                  </div>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов
+                  <br>работ
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">12.12.2023</td>
               </tr>
             </tbody>
           </table>
         </div><!-- .table-responsive -->
-
-
 
         <div class="page-nav">
           <ol class="pagination">
@@ -349,6 +486,25 @@
             </div>
           </div>
         </div><!-- .page-nav -->
+
+
+        <div class="alert alert-success open" data-alert="for-approval">
+          <div class="alert__header mb-10">
+            <div class="alert__header-title">
+              <i class="icon-successalt green"></i>
+              Изменения отправлены на согласование
+            </div>
+            <button type="button" class="alert__close" data-alert-close>
+              <i class="icon-cross"></i>
+            </button>
+          </div>
+          <div class="alert__body">
+            Тут описано как пользователь поймет что они согласованы.
+            Другой текст в несколько строк, чтобы понимать как идет растягивание компонента и какие начальные отступы у блока контента.
+          </div>
+        </div>
+
+
 
       </div>
     </section>
@@ -4540,7 +4696,7 @@
 
 
 
-    <div class="alert alert-success" data-alert="for-approval">
+    <div class="alert alert-success open" data-alert="for-approval">
       <div class="alert__header mb-10">
         <div class="alert__header-title">
           <i class="icon-successalt green"></i>
@@ -4555,39 +4711,6 @@
         Другой текст в несколько строк, чтобы понимать как идет растягивание компонента и какие начальные отступы у блока контента.
       </div>
     </div>
-
-    <div class="alert alert-danger" data-alert="failed">
-      <div class="alert__header mb-10">
-        <div class="alert__header-title">
-          <i class="icon-error red"></i>
-          Не удалось отправить запрос
-        </div>
-        <button type="button" class="alert__close" data-alert-close>
-          <i class="icon-cross"></i>
-        </button>
-      </div>
-      <div class="alert__body">
-        Описание проблемы
-        Другой текст в несколько строк, чтобы понимать как идет растягивание компонента и какие начальные отступы у блока контента.
-      </div>
-    </div>
-
-    <div class="alert alert-warning" data-alert="failed-warning">
-      <div class="alert__header mb-10">
-        <div class="alert__header-title">
-          <i class="icon-error orange"></i>
-          Не удалось отправить запрос
-        </div>
-        <button type="button" class="alert__close" data-alert-close>
-          <i class="icon-cross"></i>
-        </button>
-      </div>
-      <div class="alert__body">
-        Описание проблемы
-        Другой текст в несколько строк, чтобы понимать как идет растягивание компонента и какие начальные отступы у блока контента.
-      </div>
-    </div>
-
 
   </div>
 

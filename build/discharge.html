@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>10094 дворовых территорий</title>
+  <title></title>
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -25,7 +25,7 @@
       <div class="header__nav">
         <a href="registry.html" class="header__link ">Задания</a>
         <a href="access.html" class="header__link ">Администрирование</a>
-        <a href="employee.html" class="header__link active">НСИ</a>
+        <a href="employee.html" class="header__link ">НСИ</a>
         <div data-dropdown>
           <a class="header__link " data-dropdown-toggle>
             <span>Журналы</span>
@@ -39,7 +39,7 @@
             </a>
           </div>
         </div>
-        <a href="discharge.html" class="header__link ">Выгрузка</a>
+        <a href="discharge.html" class="header__link active">Выгрузка</a>
       </div>
       <div class="header__content">
         <a href="#" class="header__link">Аналитика</a>
@@ -70,27 +70,10 @@
 
     <section class="main">
 
-      <aside class="aside ">
+      <aside class="aside hide">
         <div class="aside__nav">
 
 
-
-          <a href="employee.html" class="aside__link ">
-            <i class="icon-tileslarge"></i>
-            <span>Сотрудники</span>
-          </a>
-          <a href="workshops.html" class="aside__link active">
-            <i class="icon-tileslarge"></i>
-            <span>Мастерские участки</span>
-          </a>
-          <a href="waste-accumulation.html" class="aside__link ">
-            <i class="icon-tileslarge"></i>
-            <span>Места накопления отходов</span>
-          </a>
-          <a href="courtyard-territories.html" class="aside__link ">
-            <i class="icon-tileslarge"></i>
-            <span>Дворовые территории</span>
-          </a>
 
 
         </div>
@@ -101,7 +84,7 @@
         </div>
       </aside>
 
-      <div class="content ">
+      <div class="content full-width">
 
         <div class="page-header">
           <div class="page-bar">
@@ -117,23 +100,9 @@
               </form>
             </div>
             <div class="page-bar__items">
-              <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
-                <i class="icon-filter"></i>
-              </button>
-              <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="settings">
-                <i class="icon-gear"></i>
-              </button>
-              <button type="button" class="btn btn-primary" data-src="#export-registry" data-fancybox="">
-                <i class="icon-download"></i>
-                <span>Экспорт</span>
-              </button>
-              <button type="button" class="btn btn-primary">
-                <i class="icon-plus"></i>
-                <span>Добавить</span>
-              </button>
               <button type="button" class="btn btn-secondary">
-                <i class="icon-pin"></i>
-                <span>Карта</span>
+                <span>Скачать</span>
+                <i class="icon-download"></i>
               </button>
             </div>
           </div>
@@ -141,7 +110,7 @@
 
 
         <div class="table-responsive">
-          <table id="workshopsTable" class="table">
+          <table id="tableDischarge" class="table">
             <thead>
               <tr>
                 <th>
@@ -151,40 +120,79 @@
                   </label>
                 </th>
                 <th>
-                  ID
-
+                  Название
+                  <div class="table-sorter">
+                  </div>
                 </th>
                 <th>
-                  Организация
-
+                  Формат файла
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
                 </th>
                 <th>
-                  Тип обслуживаемых объектов
-
+                  Дата и время
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
                 </th>
-                <th>
-                  Начальник подразделения
-
+                <th class="text-nowrap">
+                  Размер файла
                 </th>
-                <th>
-                  Обслуживаемые объекты
-
-                </th>
+                <th class="text-nowrap"></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="selected">
                 <td>
                   <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <input type="checkbox" class="checkbox__input" name="setting-item" checked>
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">001579451</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
+                </td>
+              </tr>
+              <tr class="selected">
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item" checked>
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
+                </td>
+              </tr>
+              <tr class="selected">
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item" checked>
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -193,11 +201,15 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -206,11 +218,15 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -219,11 +235,15 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -232,11 +252,15 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -245,11 +269,15 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -258,11 +286,15 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -271,37 +303,15 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
+                <td class="text-nowrap">Выгрузка реестра заданий</td>
+                <td class="text-nowrap">PDF</td>
+                <td class="text-nowrap">11.03.2025 10:05</td>
+                <td class="text-nowrap">10.3 мб</td>
+                <td class="text-nowrap">
+                  <a href="" class="pin pin--alert justify-content-start">
+                    <i class="icon-download"></i> Скачать
+                  </a>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
-                </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
               </tr>
             </tbody>
           </table>
@@ -349,6 +359,7 @@
             </div>
           </div>
         </div><!-- .page-nav -->
+
 
       </div>
     </section>

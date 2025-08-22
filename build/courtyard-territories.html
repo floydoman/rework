@@ -79,7 +79,7 @@
             <i class="icon-tileslarge"></i>
             <span>Сотрудники</span>
           </a>
-          <a href="workshops.html" class="aside__link active">
+          <a href="workshops.html" class="aside__link ">
             <i class="icon-tileslarge"></i>
             <span>Мастерские участки</span>
           </a>
@@ -87,7 +87,7 @@
             <i class="icon-tileslarge"></i>
             <span>Места накопления отходов</span>
           </a>
-          <a href="courtyard-territories.html" class="aside__link ">
+          <a href="courtyard-territories.html" class="aside__link active">
             <i class="icon-tileslarge"></i>
             <span>Дворовые территории</span>
           </a>
@@ -127,10 +127,6 @@
                 <i class="icon-download"></i>
                 <span>Экспорт</span>
               </button>
-              <button type="button" class="btn btn-primary">
-                <i class="icon-plus"></i>
-                <span>Добавить</span>
-              </button>
               <button type="button" class="btn btn-secondary">
                 <i class="icon-pin"></i>
                 <span>Карта</span>
@@ -141,7 +137,7 @@
 
 
         <div class="table-responsive">
-          <table id="workshopsTable" class="table">
+          <table id="tableCourtyardTerritories" class="table">
             <thead>
               <tr>
                 <th>
@@ -150,158 +146,156 @@
                     <i class="checkbox__item"></i>
                   </label>
                 </th>
-                <th>
-                  ID
-
+                <th class="text-nowrap">ID</th>
+                <th class="text-nowrap">
+                  ID АСУ ЕДС
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
                 </th>
-                <th>
-                  Организация
-
+                <th class="text-nowrap">Адрес</th>
+                <th class="text-nowrap">
+                  Округ
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
                 </th>
-                <th>
-                  Тип обслуживаемых объектов
-
+                <th class="text-nowrap">
+                  Район
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
                 </th>
-                <th>
-                  Начальник подразделения
-
+                <th class="text-nowrap">
+                  Координаты
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
                 </th>
-                <th>
-                  Обслуживаемые объекты
-
+                <th class="text-nowrap">Общая
+                  <br>площадь уборки, м²
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Площадь
+                  <br>ручной уборки, м²
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Площадь
+                  <br>механизированной уборки, м²
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr data-offcanvas-target-click="courtyard_territories_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">001579451</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="courtyard_territories_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="courtyard_territories_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="courtyard_territories_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="courtyard_territories_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
               </tr>
-              <tr>
+              <tr data-offcanvas-target-click="courtyard_territories_view">
                 <td>
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="setting-item">
                     <i class="checkbox__item"></i>
                   </label>
                 </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
-                </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
-                </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
-                </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
-              </tr>
-              <tr>
-                <td>
-                  <label class="checkbox">
-                    <input type="checkbox" class="checkbox__input" name="setting-item">
-                    <i class="checkbox__item"></i>
-                  </label>
-                </td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">00157945</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование организации</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Наименование типа объектов</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Иванов И.И.</td>
-                <td data-offcanvas-target-click="workshop_view" class="text-nowrap">Обслуживаемые объекты</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
+                <td class="text-nowrap">82</td>
               </tr>
             </tbody>
           </table>
@@ -349,6 +343,7 @@
             </div>
           </div>
         </div><!-- .page-nav -->
+
 
       </div>
     </section>
