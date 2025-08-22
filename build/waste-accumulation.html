@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Список страниц</title>
+  <title>10094 мест накопления отходов</title>
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -25,7 +25,7 @@
       <div class="header__nav">
         <a href="registry.html" class="header__link ">Задания</a>
         <a href="access.html" class="header__link ">Администрирование</a>
-        <a href="employee.html" class="header__link ">НСИ</a>
+        <a href="employee.html" class="header__link active">НСИ</a>
         <div data-dropdown>
           <a class="header__link " data-dropdown-toggle>
             <span>Журналы</span>
@@ -75,6 +75,23 @@
 
 
 
+          <a href="employee.html" class="aside__link ">
+            <i class="icon-tileslarge"></i>
+            <span>Сотрудники</span>
+          </a>
+          <a href="workshops.html" class="aside__link ">
+            <i class="icon-tileslarge"></i>
+            <span>Мастерские участки</span>
+          </a>
+          <a href="waste-accumulation.html" class="aside__link active">
+            <i class="icon-tileslarge"></i>
+            <span>Места накопления отходов</span>
+          </a>
+          <a href="courtyard-territories.html" class="aside__link ">
+            <i class="icon-tileslarge"></i>
+            <span>Дворовые территории</span>
+          </a>
+
 
         </div>
         <div class="aside__footer">
@@ -87,103 +104,457 @@
       <div class="content ">
 
         <div class="page-header">
-          <h1 class="page-title">Список страниц</h1>
-        </div>
-        <ul class="mb-40 page-list">
-          <li>
-            <a href="registry.html">Реестр на основе КФЗ</a>
-          </li>
-          <li>
-            <a href="employee.html">Справочник сотрудников</a>
-          </li>
-          <li>
-            <a href="employee-delete.html">Справочник сотрудников - удаление</a>
-          </li>
-          <li>
-            <a href="employee-delete-alert.html">Справочник сотрудников - удаление (уведомление)</a>
-          </li>
-          <li>
-            <a href="waste-accumulation.html">Справочник мест накопления отходов</a>
-          </li>
-          <li>
-            <a href="access.html">Доступы</a>
-          </li>
-          <li>
-            <a href="roles.html">Роли</a>
-          </li>
-          <li>
-            <a href="users.html">Пользователи</a>
-          </li>
-          <li>
-            <a href="integration-log.html">Журнал интеграционный</a>
-          </li>
-          <li>
-            <a href="logging-log.html">Журнал логирования</a>
-          </li>
-          <li>
-            <a href="not-found.html">Ничего не найдено</a>
-          </li>
-          <li>
-            <a href="courtyard-territories.html">Справочник Дворовые территории</a>
-          </li>
-          <li>
-            <a href="workshops.html">Справочник Мастерские участка</a>
-          </li>
-          <li>
-            <a href="discharge.html">Выгрузки</a>
-          </li>
-        </ul>
-        <ul class="page-list mb-40">
-          <li>
-            <a href="#" data-offcanvas-target="task">Карточка задания</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="new_task">Новое задание</a>
-          </li>
-          <li>
-            <button type="button" class="btn-link" data-src="#period_settings" data-fancybox>Настройка периодичности</button>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="employee_card">Карточка сотрудника</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="employee_card_edit">Карточка сотрудника - редактировать</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="task_active">Задание 1234-512345</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="employee_information">Карточка сотрудника с вкладками</a>
-          </li>
-        </ul>
-        <ul class="page-list mb-40">
-          <li>
-            <a href="#" data-src="#employee-delete" data-fancybox>Модалка "Подтверждение удаления"</a>
-          </li>
-          <li>
-            <a href="#" data-src="#approving-changes" data-fancybox>Модалка "Согласование изменений"</a>
-          </li>
-          <li>
-            <a href="#" data-src="#for-approval" data-fancybox>Модалка "Изменения отправлены на согласование"</a>
-          </li>
-          <li>
-            <a href="#" data-src="#failed" data-fancybox>Модалка "Не удалось отправить запрос"</a>
-          </li>
-          <li>
-            <button type="button" class="btn-link" data-src="#works" data-fancybox>Модалка "Назначенные работы"</button>
-          </li>
-        </ul>
-        <ul class="page-list mb-40">
-          <li>
-            <a href="#" data-alert-target="for-approval">Уведомление "Изменения отправлены на согласование" (зеленый)</a>
-          </li>
-          <li>
-            <a href="#" data-alert-target="failed">Уведомление "Не удалось отправить запрос" (красный)</a>
-          </li>
-          <li>
-            <a href="#" data-alert-target="failed-warning">Уведомление "Не удалось отправить запрос" (оранжевый)</a>
-          </li>
-        </ul>
+          <div class="page-bar">
+            <div class="page-bar__search">
+              <form action="" class="d-flex column-gap-12">
+                <label class="field">
+                  <input type="text" name="search" placeholder="Введите ваш запрос">
+                  <i class="select__icon icon-magnifier"></i>
+                </label>
+                <button type="button" class="btn btn-primary">
+                  <span>Найти</span>
+                </button>
+              </form>
+            </div>
+            <div class="page-bar__items">
+              <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
+                <i class="icon-filter"></i>
+              </button>
+              <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="settings">
+                <i class="icon-gear"></i>
+              </button>
+              <button type="button" class="btn btn-primary" data-src="#export-registry" data-fancybox="">
+                <i class="icon-download"></i>
+                <span>Экспорт</span>
+              </button>
+              <button type="button" class="btn btn-primary" data-src="#employee-delete" data-fancybox="">
+                <i class="icon-plus"></i>
+                <span>Добавить</span>
+              </button>
+              <button type="button" class="btn btn-secondary">
+                <i class="icon-pin"></i>
+                <span>Карта</span>
+              </button>
+            </div>
+          </div>
+        </div><!-- .page-header -->
+
+        <div class="table-responsive">
+          <table id="tableWasteAccumulation" class="table">
+            <thead>
+              <tr>
+                <th class="text-nowrap">
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <i class="checkbox__item"></i>
+                  </label>
+                </th>
+                <th class="text-nowrap">ID</th>
+                <th class="text-nowrap">
+                  ID АСУ ЕДС
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">Адрес МНО</th>
+
+                <th class="text-nowrap">
+                  Состояние
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Округ
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Район
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Координаты
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Тип геометрии
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">Дата и время установки</th>
+                <th class="text-nowrap">
+                  Категория МНО
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Наличие ограждения
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Площадь, м²
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Количество контейнеров
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Тип подстилающей поверхности
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Балансодержатель
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  График вывоза
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Время начала периода посещения
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Время окончания периода посещения
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">
+                  Название
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td>
+                  <div class="badge badge--gray">
+                    <div class="point"></div>
+                    <span>Неактивен</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">Тип геометрии объекта</td>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">Наименование категории</td>
+                <td class="text-nowrap">Присутствует</td>
+                <td class="text-nowrap">9</td>
+                <td class="text-nowrap">5</td>
+                <td class="text-nowrap">Наименование типа поверхности </td>
+                <td class="text-nowrap">Наименование</td>
+                <td class="text-nowrap">Ежедневно, 6:00</td>
+                <td class="text-nowrap">01.01.2025</td>
+                <td class="text-nowrap">01.01.2027</td>
+                <td class="text-nowrap">Название МНО</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td>
+                  <div class="badge badge--violet">
+                    <div class="point"></div>
+                    <span>Активен</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">Тип геометрии объекта</td>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">Наименование категории</td>
+                <td class="text-nowrap">Присутствует</td>
+                <td class="text-nowrap">9</td>
+                <td class="text-nowrap">5</td>
+                <td class="text-nowrap">Наименование типа поверхности </td>
+                <td class="text-nowrap">Наименование</td>
+                <td class="text-nowrap">Ежедневно, 6:00</td>
+                <td class="text-nowrap">01.01.2025</td>
+                <td class="text-nowrap">01.01.2027</td>
+                <td class="text-nowrap">Название МНО</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td>
+                  <div class="badge badge--violet">
+                    <div class="point"></div>
+                    <span>Активен</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">Тип геометрии объекта</td>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">Наименование категории</td>
+                <td class="text-nowrap">Присутствует</td>
+                <td class="text-nowrap">9</td>
+                <td class="text-nowrap">5</td>
+                <td class="text-nowrap">Наименование типа поверхности </td>
+                <td class="text-nowrap">Наименование</td>
+                <td class="text-nowrap">Ежедневно, 6:00</td>
+                <td class="text-nowrap">01.01.2025</td>
+                <td class="text-nowrap">01.01.2027</td>
+                <td class="text-nowrap">Название МНО</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td>
+                  <div class="badge badge--violet">
+                    <div class="point"></div>
+                    <span>Активен</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">Тип геометрии объекта</td>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">Наименование категории</td>
+                <td class="text-nowrap">Присутствует</td>
+                <td class="text-nowrap">9</td>
+                <td class="text-nowrap">5</td>
+                <td class="text-nowrap">Наименование типа поверхности </td>
+                <td class="text-nowrap">Наименование</td>
+                <td class="text-nowrap">Ежедневно, 6:00</td>
+                <td class="text-nowrap">01.01.2025</td>
+                <td class="text-nowrap">01.01.2027</td>
+                <td class="text-nowrap">Название МНО</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td>
+                  <div class="badge badge--violet">
+                    <div class="point"></div>
+                    <span>Активен</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">Тип геометрии объекта</td>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">Наименование категории</td>
+                <td class="text-nowrap">Присутствует</td>
+                <td class="text-nowrap">9</td>
+                <td class="text-nowrap">5</td>
+                <td class="text-nowrap">Наименование типа поверхности </td>
+                <td class="text-nowrap">Наименование</td>
+                <td class="text-nowrap">Ежедневно, 6:00</td>
+                <td class="text-nowrap">01.01.2025</td>
+                <td class="text-nowrap">01.01.2027</td>
+                <td class="text-nowrap">Название МНО</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td>
+                  <div class="badge badge--violet">
+                    <div class="point"></div>
+                    <span>Активен</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">Тип геометрии объекта</td>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">Наименование категории</td>
+                <td class="text-nowrap">Присутствует</td>
+                <td class="text-nowrap">9</td>
+                <td class="text-nowrap">5</td>
+                <td class="text-nowrap">Наименование типа поверхности </td>
+                <td class="text-nowrap">Наименование</td>
+                <td class="text-nowrap">Ежедневно, 6:00</td>
+                <td class="text-nowrap">01.01.2025</td>
+                <td class="text-nowrap">01.01.2027</td>
+                <td class="text-nowrap">Название МНО</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td>
+                  <div class="badge badge--red">
+                    <div class="point"></div>
+                    <span>Ремонт</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">Тип геометрии объекта</td>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">Наименование категории</td>
+                <td class="text-nowrap">Присутствует</td>
+                <td class="text-nowrap">9</td>
+                <td class="text-nowrap">5</td>
+                <td class="text-nowrap">Наименование типа поверхности </td>
+                <td class="text-nowrap">Наименование</td>
+                <td class="text-nowrap">Ежедневно, 6:00</td>
+                <td class="text-nowrap">01.01.2025</td>
+                <td class="text-nowrap">01.01.2027</td>
+                <td class="text-nowrap">Название МНО</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" name="setting-item">
+                    <i class="checkbox__item"></i>
+                  </label>
+                </td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Улица Нижняя 20</td>
+                <td>
+                  <div class="badge badge--red">
+                    <div class="point"></div>
+                    <span>Ремонт</span>
+                  </div>
+                </td>
+                <td class="text-nowrap">ЗАО</td>
+                <td class="text-nowrap">Красносельский</td>
+                <td>55.775697, 37.573569</td>
+                <td class="text-nowrap">Тип геометрии объекта</td>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">Наименование категории</td>
+                <td class="text-nowrap">Присутствует</td>
+                <td class="text-nowrap">9</td>
+                <td class="text-nowrap">5</td>
+                <td class="text-nowrap">Наименование типа поверхности </td>
+                <td class="text-nowrap">Наименование</td>
+                <td class="text-nowrap">Ежедневно, 6:00</td>
+                <td class="text-nowrap">01.01.2025</td>
+                <td class="text-nowrap">01.01.2027</td>
+                <td class="text-nowrap">Название МНО</td>
+              </tr>
+
+
+            </tbody>
+          </table>
+        </div><!-- .table-responsive -->
+
+        <div class="page-nav">
+          <ol class="pagination">
+            <li class="pagination__item">
+              <span class="pagination__link active">1</span>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">3</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">4</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">5</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">6</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__control">
+                <span>Следующая</span>
+              </a>
+            </li>
+          </ol>
+          <div class="page-view">
+            <div class="select select--sm" data-select>
+              <input type="hidden" name="view" data-select-value>
+              <div class="select__control" data-select-control>
+                <div class="select__active" data-select-active>Показано записей: 10</div>
+              </div>
+              <div class="select__dropdown select__dropdown--top" data-select-dropdown>
+                <div class="select__item active" data-select-item="Показано записей: 10">10</div>
+                <div class="select__item" data-select-item="Показано записей: 20">20</div>
+                <div class="select__item" data-select-item="Показано записей: 30">30</div>
+              </div>
+            </div>
+          </div>
+        </div><!-- .page-nav -->
+
 
       </div>
     </section>

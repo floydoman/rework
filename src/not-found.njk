@@ -1,0 +1,56 @@
+{% extends "src/elements/_template.njk" %}
+{% set title = "История" %}
+{% set tabs = true %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="page-bar">
+            <div class="page-bar__search">
+                <form action="" class="d-flex column-gap-12">
+                    <label class="field">
+                        <input type="text" name="search" placeholder="Введите ваш запрос">
+                        <i class="select__icon icon-magnifier"></i>
+                    </label>
+                </form>
+            </div>
+            <div class="page-bar__items">
+                <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
+                    <i class="icon-filter"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="settings">
+                    <i class="icon-gear"></i>
+                </button>
+                <button type="button" class="btn btn-primary" data-src="#export-registry" data-fancybox="">
+                    <i class="icon-download"></i>
+                    <span>Экспорт</span>
+                </button>
+                <button type="button" class="btn btn-primary">
+                    <i class="icon-plus"></i>
+                    <span>Добавить</span>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                    <i class="icon-pin"></i>
+                    <span>Карта</span>
+                </button>
+            </div>
+        </div>
+    </div><!-- .page-header -->
+
+
+
+    <div class="d-flex align-center justify-content-center vh-70">
+        <div class="not-found-container">
+            <object class="mb-60" type="image/svg+xml" data="img/not-found.svg"></object>
+            <div class="not-found__title">Ничего не найдено</div>
+            <div class="not-found__text mb-24">По данному запросу ничего не обнаружено</div>
+            <a href="index.html" class="btn btn-primary">На главную</a>
+        </div>
+    </div><!-- .tabs-content -->
+
+
+
+{% endblock %}
+
+
+
+

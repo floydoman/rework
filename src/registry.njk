@@ -1,0 +1,2140 @@
+{% extends "src/elements/_template.njk" %}
+{% set title = "Список страниц" %}
+{% set registry = true %}
+{% set tabs = true %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="page-bar">
+            <div class="page-bar__search">
+                <form action="" class="d-flex column-gap-12">
+                    <label class="field">
+                        <input type="text" name="search" placeholder="Введите ваш запрос">
+                        <i class="select__icon icon-magnifier"></i>
+                    </label>
+                    <button type="button" class="btn btn-primary">
+                        <span>Найти</span>
+                    </button>
+                </form>
+            </div>
+            <div class="page-bar__items">
+                <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
+                    <i class="icon-filter"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="settings">
+                    <i class="icon-gear"></i>
+                </button>
+                <button type="button" class="btn btn-primary" data-src="#export-registry" data-fancybox="">
+                    <i class="icon-download"></i>
+                    <span>Экспорт</span>
+                </button>
+                <button type="button" class="btn btn-primary">
+                    <i class="icon-plus"></i>
+                    <span>Добавить</span>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                    <i class="icon-pin"></i>
+                    <span>Карта</span>
+                </button>
+            </div>
+        </div>
+    </div><!-- .page-header -->
+
+    <div class="page-control">
+        <div class="tabs-control">
+            <button type="button" class="tabs-nav tabs-nav-red active" data-tabs-nav="tab-1">
+                <span class="tabs-nav__title">Все</span>
+                <span class="tabs-nav__num">54</span>
+            </button>
+            <button type="button" class="tabs-nav tabs-nav-red" data-tabs-nav="tab-2">
+                <span class="tabs-nav__title">Новые</span>
+                <span class="tabs-nav__num">4</span>
+            </button>
+            <button type="button" class="tabs-nav tabs-nav-red" data-tabs-nav="tab-3">
+                <span class="tabs-nav__title">Черновики</span>
+                <span class="tabs-nav__num">4</span>
+            </button>
+            <button type="button" class="tabs-nav tabs-nav-red" data-tabs-nav="tab-4">
+                <span class="tabs-nav__title">В работе</span>
+                <span class="tabs-nav__num">7</span>
+            </button>
+            <button type="button" class="tabs-nav tabs-nav-red" data-tabs-nav="tab-5">
+                <span class="tabs-nav__title">Ожидают подтверждения</span>
+                <span class="tabs-nav__num">12</span>
+            </button>
+            <button type="button" class="tabs-nav tabs-nav-red" data-tabs-nav="tab-6">
+                <span class="tabs-nav__title">Возвращены на доработку</span>
+                <span class="tabs-nav__num">12</span>
+            </button>
+            <button type="button" class="tabs-nav tabs-nav-red" data-tabs-nav="tab-7">
+                <span class="tabs-nav__title">Закрытые</span>
+                <span class="tabs-nav__num">12</span>
+            </button>
+        </div>
+        <div class="page-switcher">
+            <div class="select select--sm" data-select>
+                <input type="hidden" name="view" data-select-value>
+                <div class="select__control" data-select-control>
+                    <div class="select__active" data-select-active>За последний месяц</div>
+                </div>
+                <div class="select__dropdown" data-select-dropdown>
+                    <div class="select__item active" data-select-item="За последний месяц">За последний месяц</div>
+                    <div class="select__item" data-select-item="За последние 7 дней">За последние 7 дней</div>
+                    <div class="select__item" data-select-item="За последний день">За последний день</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .page-control -->
+
+    <div class="pills-control">
+        <div class="pills">
+            <div class="pills-element">
+                <div class="pills-title">Задания:</div>
+                <div class="pills-list">мои, моих сотрудников</div>
+                <button type="button" class="btn-icon-svg">
+                    <i class="icon-crosscircle"></i>
+                </button>
+            </div>
+            <div class="pills-element">
+                <div class="pills-title">Задания:</div>
+                <div class="pills-list">мои, моих сотрудников</div>
+                <button type="button" class="btn-icon-svg">
+                    <i class="icon-crosscircle"></i>
+                </button>
+            </div>
+            <div class="pills-element">
+                <div class="pills-title">Задания:</div>
+                <div class="pills-list">мои, моих сотрудников</div>
+                <button type="button" class="btn-icon-svg">
+                    <i class="icon-crosscircle"></i>
+                </button>
+            </div>
+            <div class="pills-element">
+                <div class="pills-title">Задания:</div>
+                <div class="pills-list">мои, моих сотрудников</div>
+                <button type="button" class="btn-icon-svg">
+                    <i class="icon-crosscircle"></i>
+                </button>
+            </div>
+            <div class="pills-element">
+                <div class="pills-title">Задания:</div>
+                <div class="pills-list">мои, моих сотрудников</div>
+                <button type="button" class="btn-icon-svg">
+                    <i class="icon-crosscircle"></i>
+                </button>
+            </div>
+            <div class="pills-element">
+                <div class="pills-title">Задания:</div>
+                <div class="pills-list">мои, моих сотрудников</div>
+                <button type="button" class="btn-icon-svg">
+                    <i class="icon-crosscircle"></i>
+                </button>
+            </div>
+            <div class="pills-element">
+                <div class="pills-title">Задания:</div>
+                <div class="pills-list">мои, моих сотрудников</div>
+                <button type="button" class="btn-icon-svg">
+                    <i class="icon-crosscircle"></i>
+                </button>
+            </div>
+            <a class="pills-reset" href="#">Сбросить</a>
+        </div>
+    </div><!-- .pills-control -->
+
+    <div class="tabs-content active" data-tabs-target="tab-1">
+        <div class="table-responsive">
+            <table id="tableRegistry" class="table">
+                <thead>
+                <tr>
+                    <th>
+                        Номер задания
+                        <div class="table-sorter">
+                            <span></span>
+                        </div>
+                    </th>
+                    <th>
+                        Дата формирования
+                        <div class="table-sorter">
+                            <span></span>
+                        </div>
+                    </th>
+                    <th>
+                        Статус
+                        <div class="table-sorter">
+                            <span></span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">
+                        Округ
+                        <div class="table-sorter">
+                            <span></span>
+                        </div>
+                    </th>
+                    <th>
+                        Район
+                        <div class="table-sorter">
+                            <span></span>
+                        </div>
+                    </th>
+                    <th>
+                        Тип задания
+                        <div class="table-sorter">
+                            <span></span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Адрес</th>
+                    <th class="text-nowrap">Основание создания</th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">Организация-исполнитель</th>
+                    <th class="text-nowrap">Подразделение-исполнитель</th>
+                    <th class="text-nowrap">
+                        Исполнитель
+                        <div class="table-sorter">
+                            <span></span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Остаток регламентного срока</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert">04582103/24
+                            <i class="icon-statuspinalert red"></i>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--gray">
+                            <div class="point"></div>
+                            <span>Черновик</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert">04582103/24
+                            <i class="icon-statuspinalert red"></i>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--blue">
+                            <div class="point"></div>
+                            <span>Новое</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert">04582103/24
+                            <i class="icon-statuspinalert red"></i>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--orange">
+                            <div class="point"></div>
+                            <span>На подтверждении</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--red">
+                            <div class="point"></div>
+                            <span>На доработке</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--green">
+                            <div class="point"></div>
+                            <span>Закрыто</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- .tabs-content -->
+
+    <div class="tabs-content" data-tabs-target="tab-2">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Номер задания</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Дата формирования</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Статус</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Округ</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Район</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Тип задания</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Адрес</th>
+                    <th class="text-nowrap">Основание создания</th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">Организация-исполнитель</th>
+                    <th class="text-nowrap">Подразделение-исполнитель</th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Исполнитель</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Остаток регламентного срока</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--blue">
+                            <div class="point"></div>
+                            <span>Новое</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--blue">
+                            <div class="point"></div>
+                            <span>Новое</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--blue">
+                            <div class="point"></div>
+                            <span>Новое</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--blue">
+                            <div class="point"></div>
+                            <span>Новое</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- .tabs-content -->
+    <div class="tabs-content" data-tabs-target="tab-3">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Номер задания</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Дата формирования</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Статус</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Округ</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Район</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Тип задания</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Адрес</th>
+                    <th class="text-nowrap">Основание создания</th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">Организация-исполнитель</th>
+                    <th class="text-nowrap">Подразделение-исполнитель</th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Исполнитель</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Остаток регламентного срока</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--gray">
+                            <div class="point"></div>
+                            <span>Черновик</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--gray">
+                            <div class="point"></div>
+                            <span>Черновик</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--gray">
+                            <div class="point"></div>
+                            <span>Черновик</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--gray">
+                            <div class="point"></div>
+                            <span>Черновик</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- .tabs-content -->
+    <div class="tabs-content" data-tabs-target="tab-4">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Номер задания</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Дата формирования</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Статус</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Округ</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Район</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Тип задания</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Адрес</th>
+                    <th class="text-nowrap">Основание создания</th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">Организация-исполнитель</th>
+                    <th class="text-nowrap">Подразделение-исполнитель</th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Исполнитель</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Остаток регламентного срока</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--violet">
+                            <div class="point"></div>
+                            <span>В работе</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- .tabs-content -->
+    <div class="tabs-content" data-tabs-target="tab-5">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Номер задания</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Дата формирования</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Статус</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Округ</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Район</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Тип задания</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Адрес</th>
+                    <th class="text-nowrap">Основание создания</th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">Организация-исполнитель</th>
+                    <th class="text-nowrap">Подразделение-исполнитель</th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Исполнитель</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Остаток регламентного срока</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--orange">
+                            <div class="point"></div>
+                            <span>На подтверждении</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--orange">
+                            <div class="point"></div>
+                            <span>На подтверждении</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--orange">
+                            <div class="point"></div>
+                            <span>На подтверждении</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--orange">
+                            <div class="point"></div>
+                            <span>На подтверждении</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--orange">
+                            <div class="point"></div>
+                            <span>На подтверждении</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--orange">
+                            <div class="point"></div>
+                            <span>На подтверждении</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--orange">
+                            <div class="point"></div>
+                            <span>На подтверждении</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--orange">
+                            <div class="point"></div>
+                            <span>На подтверждении</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- .tabs-content -->
+    <div class="tabs-content" data-tabs-target="tab-6">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Номер задания</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Дата формирования</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Статус</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Округ</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Район</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Тип задания</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Адрес</th>
+                    <th class="text-nowrap">Основание создания</th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">Организация-исполнитель</th>
+                    <th class="text-nowrap">Подразделение-исполнитель</th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Исполнитель</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Остаток регламентного срока</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--red">
+                            <div class="point"></div>
+                            <span>На доработке</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--red">
+                            <div class="point"></div>
+                            <span>На доработке</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--red">
+                            <div class="point"></div>
+                            <span>На доработке</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--red">
+                            <div class="point"></div>
+                            <span>На доработке</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--red">
+                            <div class="point"></div>
+                            <span>На доработке</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--red">
+                            <div class="point"></div>
+                            <span>На доработке</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--red">
+                            <div class="point"></div>
+                            <span>На доработке</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">СЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Верхний Предтеченский переулок, 11а ст3">
+                            <span>Верхний Предтеченский переулок, 11а ст3</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div><!-- .tabs-content -->
+    <div class="tabs-content" data-tabs-target="tab-7">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Номер задания</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Дата формирования</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Статус</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Округ</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Район</span>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Тип задания</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Адрес</th>
+                    <th class="text-nowrap">Основание создания</th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Плановая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата начала работ
+                    </th>
+                    <th class="text-nowrap">
+                        Фактическая<br>
+                        дата окончания работ
+                    </th>
+                    <th class="text-nowrap">Организация-исполнитель</th>
+                    <th class="text-nowrap">Подразделение-исполнитель</th>
+                    <th>
+                        <div class="table-sorter">
+                            <span>Исполнитель</span>
+                        </div>
+                    </th>
+                    <th class="text-nowrap">Остаток регламентного срока</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--green">
+                            <div class="point"></div>
+                            <span>Закрыто</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--green">
+                            <div class="point"></div>
+                            <span>Закрыто</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--green">
+                            <div class="point"></div>
+                            <span>Закрыто</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--green">
+                            <div class="point"></div>
+                            <span>Закрыто</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--green">
+                            <div class="point"></div>
+                            <span>Закрыто</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                <tr>
+                    <td class="text-nowrap">04582103/24</td>
+                    <td class="text-nowrap">12.12.2023 10:05</td>
+                    <td>
+                        <div class="badge badge--green">
+                            <div class="point"></div>
+                            <span>Закрыто</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>
+                        <div class="td-180">
+                            Наименование типа задания
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-address" data-table-address="Улица Арбат 40 к12 Подъезд 2, этаж 8">
+                            <span>Улица Арбат 40 к12 Подъезд 2, этаж 8</span>
+                        </div>
+                    </td>
+                    <td class="text-nowrap">Описание оснований</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">12.12.2023</td>
+                    <td class="text-nowrap">УО “Ромашка”</td>
+                    <td>
+                        <div class="td-180">Подразделение</div>
+                    </td>
+                    <td class="text-nowrap">Иванов А.А.</td>
+                    <td class="text-nowrap">72 часа</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- .tabs-content -->
+
+    <div class="page-nav">
+        <ol class="pagination">
+            <li class="pagination__item">
+                <span class="pagination__link active">1</span>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">3</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">4</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">5</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">6</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__control">
+                    <span>Следующая</span>
+                </a>
+            </li>
+        </ol>
+        <div class="page-view">
+            <div class="select select--sm" data-select>
+                <input type="hidden" name="view" data-select-value>
+                <div class="select__control" data-select-control>
+                    <div class="select__active" data-select-active>Показано заданий: 10</div>
+                </div>
+                <div class="select__dropdown select__dropdown--top" data-select-dropdown>
+                    <div class="select__item active" data-select-item="Показано заданий: 10">10</div>
+                    <div class="select__item" data-select-item="Показано заданий: 20">20</div>
+                    <div class="select__item" data-select-item="Показано заданий: 30">30</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .page-nav -->
+
+{% endblock %}
+
+
+
+

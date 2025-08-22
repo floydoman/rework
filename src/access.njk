@@ -1,0 +1,192 @@
+{% extends "src/elements/_template.njk" %}
+{% set title = "Всего 104 доступа" %}
+{% set tabs = true %}
+{% set administration = true %}
+{% set access = true %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="page-bar">
+            <div class="page-bar__search">
+                <form action="" class="d-flex column-gap-12">
+                    <label class="field">
+                        <input type="text" name="search" placeholder="Введите ваш запрос">
+                        <i class="select__icon icon-magnifier"></i>
+                    </label>
+                    <button type="button" class="btn btn-primary">
+                        <span>Найти</span>
+                    </button>
+                </form>
+            </div>
+            <div class="page-bar__items">
+                <button type="button" class="btn btn-primary" data-src="#access-delete" data-fancybox="">
+                    <i class="icon-trashcan"></i>
+                    <span>Удалить</span>
+                </button>
+            </div>
+        </div>
+    </div><!-- .page-header -->
+
+    <div class="table-responsive">
+        <table id="tableAccess" class="table">
+            <thead>
+            <tr>
+                <th>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </th>
+                <th class="text-nowrap">Идентификатор</th>
+                <th class="text-nowrap">Код</th>
+                <th class="text-nowrap">Наименование</th>
+                <th class="text-nowrap">Описание</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr data-offcanvas-target-click="access_view" class="selected">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item" checked>
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">193</td>
+                    <td class="text-nowrap">notice_push_close</td>
+                    <td class="text-nowrap">Push Аварийная заявка</td>
+                    <td class="text-nowrap">Описание доступа в несколько строк,<br />несколько строк</td>
+                </tr>
+                <tr data-offcanvas-target-click="access_view" class="selected">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item" checked>
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">193</td>
+                    <td class="text-nowrap">notice_push_close</td>
+                    <td class="text-nowrap">Push Аварийная заявка</td>
+                    <td class="text-nowrap">Описание доступа в несколько строк,<br />несколько строк</td>
+                </tr>
+                <tr data-offcanvas-target-click="access_view" class="selected">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item" checked>
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">193</td>
+                    <td class="text-nowrap">notice_push_close</td>
+                    <td class="text-nowrap">Push Аварийная заявка</td>
+                    <td class="text-nowrap">Описание доступа в несколько строк,<br />несколько строк</td>
+                </tr>
+                <tr data-offcanvas-target-click="access_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">193</td>
+                    <td class="text-nowrap">notice_push_close</td>
+                    <td class="text-nowrap">Push Аварийная заявка</td>
+                    <td class="text-nowrap">Описание доступа в несколько строк,<br />несколько строк</td>
+                </tr>
+                <tr data-offcanvas-target-click="access_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">193</td>
+                    <td class="text-nowrap">notice_push_close</td>
+                    <td class="text-nowrap">Push Аварийная заявка</td>
+                    <td class="text-nowrap">Описание доступа в несколько строк,<br />несколько строк</td>
+                </tr>
+                <tr data-offcanvas-target-click="access_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">193</td>
+                    <td class="text-nowrap">notice_push_close</td>
+                    <td class="text-nowrap">Push Аварийная заявка</td>
+                    <td class="text-nowrap">Описание доступа в несколько строк,<br />несколько строк</td>
+                </tr>
+                <tr data-offcanvas-target-click="access_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">193</td>
+                    <td class="text-nowrap">notice_push_close</td>
+                    <td class="text-nowrap">Push Аварийная заявка</td>
+                    <td class="text-nowrap">Описание доступа в несколько строк,<br />несколько строк</td>
+                </tr>
+                <tr data-offcanvas-target-click="access_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">193</td>
+                    <td class="text-nowrap">notice_push_close</td>
+                    <td class="text-nowrap">Push Аварийная заявка</td>
+                    <td class="text-nowrap">Описание доступа в несколько строк,<br />несколько строк</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!-- .table-responsive -->
+
+    <div class="page-nav">
+        <ol class="pagination">
+            <li class="pagination__item">
+                <span class="pagination__link active">1</span>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">3</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">4</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">5</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">6</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__control">
+                    <span>Следующая</span>
+                </a>
+            </li>
+        </ol>
+        <div class="page-view">
+            <div class="select select--sm" data-select>
+                <input type="hidden" name="view" data-select-value>
+                <div class="select__control" data-select-control>
+                    <div class="select__active" data-select-active>Показано записей: 10</div>
+                </div>
+                <div class="select__dropdown select__dropdown--top" data-select-dropdown>
+                    <div class="select__item active" data-select-item="Показано записей: 10">10</div>
+                    <div class="select__item" data-select-item="Показано записей: 20">20</div>
+                    <div class="select__item" data-select-item="Показано записей: 30">30</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .page-nav -->
+
+{% endblock %}
+
+
+
+

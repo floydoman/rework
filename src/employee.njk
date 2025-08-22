@@ -1,0 +1,411 @@
+{% extends "src/elements/_template.njk" %}
+{% set title = "Всего 104 сотрудника" %}
+{% set nsi = true %}
+{% set employee = true %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="page-bar">
+            <div class="page-bar__search">
+                <form action="" class="d-flex column-gap-12">
+                    <label class="field">
+                        <input type="text" name="search" placeholder="Введите ваш запрос">
+                        <i class="select__icon icon-magnifier"></i>
+                    </label>
+                    <button type="button" class="btn btn-primary">
+                        <span>Найти</span>
+                    </button>
+                </form>
+            </div>
+            <div class="page-bar__items">
+                <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
+                    <i class="icon-filter"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="settings">
+                    <i class="icon-gear"></i>
+                </button>
+                <button type="button" class="btn btn-primary" data-src="#export-registry" data-fancybox="">
+                    <i class="icon-download"></i>
+                    <span>Экспорт</span>
+                </button>
+                <div data-dropdown>
+                    <button type="button" class="btn btn-primary" data-dropdown-toggle>
+                        <span>Добавить</span>
+                        <i class="icon-chevrondown"></i>
+                    </button>
+                    <div class="dropdown-content" data-dropdown-content>
+                        <a href="#" class="dropdown-link">
+                            <i class="icon-plus blue"></i>
+                            <span>Добавить сотрудника</span>
+                        </a>
+                        <a href="#" class="dropdown-link">
+                            <i class="icon-file blue"></i>
+                            <span>Скачать шаблон для заполнения</span>
+                        </a>
+                        <a href="#" class="dropdown-link">
+                            <i class="icon-file blue"></i>
+                            <span>Загрузить заполненный шаблон</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .page-header -->
+
+    <table id="example" class="table" style="display: none">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Size</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>.htaccess</td>
+            <td>03.06.2013 14:29</td>
+            <td>HTACCESS-Datei</td>
+            <td>1 KB</td>
+        </tr>
+        <tr>
+            <td>config.php</td>
+            <td>03.06.2013 14:29</td>
+            <td>PHP-Datei</td>
+            <td>3 KB</td>
+        </tr>
+        <tr>
+            <td>blank.html</td>
+            <td>18.05.2014 11:08</td>
+            <td>HTLM-Datei</td>
+            <td>1 KB</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="table-responsive">
+        <table id="employeeTable" class="table">
+            <thead>
+            <tr>
+                <th id="th1">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </th>
+                <th id="th2" class="text-nowrap">ID</th>
+                <th id="th3" class="text-nowrap">ФИО</th>
+                <th id="th4" class="text-nowrap">
+                    Организация
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th id="th5" class="text-nowrap">
+                    Подразделение
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th id="th6" class="text-nowrap">
+                    Должность
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th id="th7" class="text-nowrap">СНИЛС</th>
+                <th id="th8" class="text-nowrap">
+                    Дата приема<br>
+                    на работу
+                </th>
+                <th id="th9" class="text-nowrap">
+                    Статус
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th id="th10" class="text-nowrap">
+                    График сменности
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th id="th11" class="text-nowrap">
+                    Дата последнего<br>
+                    закрытия задания
+                </th>
+                <th id="th12" class="text-nowrap">
+                    Доступные виды работ
+                </th>
+                <th id="th13" class="text-nowrap">
+                    Дата<br>
+                    создания карточки
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </td>
+                <td class="text-nowrap">
+                    04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование<br>подразделения</td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                    <div class="badge badge--gray">
+                        <div class="point"></div>
+                        <span>Больничный</span>
+                    </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов<br>работ</td>
+                <td class="text-nowrap">12.12.2023</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </td>
+                <td class="text-nowrap">
+                    04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование<br>подразделения</td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                    <div class="badge badge--violet">
+                        <div class="point"></div>
+                        <span>Работа</span>
+                    </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов<br>работ</td>
+                <td class="text-nowrap">12.12.2023</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </td>
+                <td class="text-nowrap">
+                    04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование<br>подразделения</td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                    <div class="badge badge--violet">
+                        <div class="point"></div>
+                        <span>Работа</span>
+                    </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов<br>работ</td>
+                <td class="text-nowrap">12.12.2023</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </td>
+                <td class="text-nowrap">
+                    04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование<br>подразделения</td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                    <div class="badge badge--violet">
+                        <div class="point"></div>
+                        <span>Работа</span>
+                    </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов<br>работ</td>
+                <td class="text-nowrap">12.12.2023</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </td>
+                <td class="text-nowrap">
+                    04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование<br>подразделения</td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                    <div class="badge badge--violet">
+                        <div class="point"></div>
+                        <span>Работа</span>
+                    </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов<br>работ</td>
+                <td class="text-nowrap">12.12.2023</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </td>
+                <td class="text-nowrap">
+                    04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование<br>подразделения</td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                    <div class="badge badge--orange">
+                        <div class="point"></div>
+                        <span>Отпуск</span>
+                    </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов<br>работ</td>
+                <td class="text-nowrap">12.12.2023</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </td>
+                <td class="text-nowrap">
+                    04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование<br>подразделения</td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                    <div class="badge badge--red">
+                        <div class="point"></div>
+                        <span>Отсутствие</span>
+                    </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов<br>работ</td>
+                <td class="text-nowrap">12.12.2023</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </td>
+                <td class="text-nowrap">
+                    04582103
+                </td>
+                <td class="text-nowrap">Иванов А.А.</td>
+                <td class="text-nowrap">УО “Ромашка”</td>
+                <td class="text-nowrap">Наименование<br>подразделения</td>
+                <td class="text-nowrap">Специалист</td>
+                <td class="text-nowrap">123-456-789-01</td>
+                <td class="text-nowrap">12.12.2023 </td>
+                <td>
+                    <div class="badge badge--gray">
+                        <div class="point"></div>
+                        <span>Больничный</span>
+                    </div>
+                </td>
+                <td class="text-nowrap">Показатель</td>
+                <td class="text-nowrap">12.12.2023</td>
+                <td class="text-nowrap">Наименования типов<br>работ</td>
+                <td class="text-nowrap">12.12.2023</td>
+            </tr>
+            </tbody>
+        </table>
+    </div><!-- .table-responsive -->
+
+    <div class="page-nav">
+        <ol class="pagination">
+            <li class="pagination__item">
+                <span class="pagination__link active">1</span>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">3</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">4</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">5</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">6</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__control">
+                    <span>Следующая</span>
+                </a>
+            </li>
+        </ol>
+        <div class="page-view">
+            <div class="select select--sm" data-select>
+                <input type="hidden" name="view" data-select-value>
+                <div class="select__control" data-select-control>
+                    <div class="select__active" data-select-active>Показано записей: 10</div>
+                </div>
+                <div class="select__dropdown select__dropdown--top" data-select-dropdown>
+                    <div class="select__item active" data-select-item="Показано записей: 10">10</div>
+                    <div class="select__item" data-select-item="Показано записей: 20">20</div>
+                    <div class="select__item" data-select-item="Показано записей: 30">30</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .page-nav -->
+{% endblock %}
+
+
+
+

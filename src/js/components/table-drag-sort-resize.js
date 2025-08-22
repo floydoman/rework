@@ -31,7 +31,7 @@ function elementStyleProperty(element, prop) {
 function numericProperty(prop) {
     return (typeof prop == 'undefined' || prop == '' || prop == null) ? 0 : parseInt(prop);
 }
-function eventTarget (event) {
+function eventTarget(event) {
     return event.target || event.srcElement;
 }
 
@@ -57,7 +57,7 @@ function naturalSort(a, b) {
         if (xD < yD) return -1;
         else if (xD > yD) return 1;
     // сортировка по разделенным числовым строкам и строкам по умолчанию
-    for (var cLoc = 0, numS = Math.max(xN.length, yN.length) ; cLoc < numS; cLoc++) {
+    for (var cLoc = 0, numS = Math.max(xN.length, yN.length); cLoc < numS; cLoc++) {
         // значения с плавающей запятой, не начинающиеся с '0', строки или 0, если они не определены
         oFxNcL = !(xN[cLoc] || '').match(ore) && parseFloat(xN[cLoc]) || xN[cLoc] || 0;
         oFyNcL = !(yN[cLoc] || '').match(ore) && parseFloat(yN[cLoc]) || yN[cLoc] || 0;
@@ -74,20 +74,25 @@ function naturalSort(a, b) {
     return 0;
 }
 function sort(cell, table) {
-    // сохранение строки для сортировки
+    if (!cell || !table || !table.tBodies || !table.tBodies[0]) return;
+
+    var body = table.tBodies[0];
+    var colIndex = cell.cellIndex;
+
+    // собрать строки тела
     var sortRows = [];
-    for (var i = 1; i < table.rows.length; i++) {
-        sortRows.push(table.rows[i]);
-    }
+    for (var i = 0; i < body.rows.length; i++) sortRows.push(body.rows[i]);
 
-    // сортировка
+    // сортировка с защитой от отсутствующих ячеек
     sortRows.sort(function (a, b) {
-        var x = a.cells[cell.cellIndex].textContent,
-            y = b.cells[cell.cellIndex].textContent;
-
+        var ac = a.cells[colIndex];
+        var bc = b.cells[colIndex];
+        var x = ac ? (ac.textContent || ac.innerText || '') : '';
+        var y = bc ? (bc.textContent || bc.innerText || '') : '';
         return naturalSort(x, y);
     });
 
+    // переключение класса направления
     if (hasClass(cell, 'sort-down')) {
         cell.className = cell.className.replace(/ sort-down/, '');
         cell.className += ' sort-up';
@@ -96,16 +101,11 @@ function sort(cell, table) {
         cell.className += ' sort-down';
     }
 
-    // прежде чем мы добавим, должны ли мы перевернуть новый массив или нет?
-    if (hasClass(cell, 'sort-down')) {
-        sortRows.reverse();
-    }
+    if (hasClass(cell, 'sort-down')) sortRows.reverse();
 
-    for (i = 0; i < sortRows.length; i++) {
-        // appendChild(x) перемещает x, если он уже присутствует где-то еще в DOM
-        table.tBodies[0].appendChild(sortRows[i]);
-    }
+    for (var k = 0; k < sortRows.length; k++) body.appendChild(sortRows[k]);
 }
+
 
 var hasClass = function (el, c) {
     return (' ' + el.className + ' ').indexOf(' ' + c + ' ') > -1;
@@ -149,11 +149,11 @@ function saveState(key, table /* name, prop*/) {
 
     var state = loadState(key),
         id = table.getAttribute('id'),
-        element = {id: id},
+        element = { id: id },
         index = findIndex(state, id);
 
-    for (var i = 2; i < arguments.length; i+=2) {
-        element[arguments[i]] = arguments[i+1];
+    for (var i = 2; i < arguments.length; i += 2) {
+        element[arguments[i]] = arguments[i + 1];
     }
 
     // console.log("element: ", element);
@@ -167,7 +167,7 @@ function saveState(key, table /* name, prop*/) {
         state.splice(index, 1, element);
     }
 
-    console.log("saveState: ", {key: key, state : JSON.stringify(state)});
+    console.log("saveState: ", { key: key, state: JSON.stringify(state) });
     localStorage.setItem(key, JSON.stringify(state));
 }
 
@@ -183,7 +183,7 @@ function moveTableColumn1(table, start, end) {
 }
 function restoreState(key, table, name) {
     var nc = table.rows[0].cells.length;
-    var pm = Array.from({length: nc}, (_, i) => i); // Исходная перестановка
+    var pm = Array.from({ length: nc }, (_, i) => i); // Исходная перестановка
 
     if (!localStorage) {
         console.log('localStorage не поддерживается или не используется');
@@ -242,7 +242,7 @@ function restoreState(key, table, name) {
 }
 
 // Перемещение (drag'n'drop) колонок в html таблице.
-function MouseHandler () {
+function MouseHandler() {
     //this._mouseDownEvent
     //this._mouseStarted
     //this._mouseMoveDelegate
@@ -300,8 +300,8 @@ MouseHandler.prototype = (function () {
             if (!this._mouseStarted) {
                 // поддержка ie8
 
-                (event.preventDefault ? event.preventDefault() : (event.returnValue=false));
-                (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble=true));
+                (event.preventDefault ? event.preventDefault() : (event.returnValue = false));
+                (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble = true));
 
                 return true;
             }
@@ -318,12 +318,12 @@ MouseHandler.prototype = (function () {
             return _this._mouseUp(event);
         };
 
-        addEvent(document.querySelector('.table'), 'mousemove', this._mouseMoveDelegate);
-        addEvent(document.querySelector('.table'), 'mouseup', this._mouseUpDelegate);
+        addEvent(document, 'mousemove', this._mouseMoveDelegate);
+        addEvent(document, 'mouseup', this._mouseUpDelegate);
 
         // поддержка ie8
-        (event.preventDefault ? event.preventDefault() : (event.returnValue=false));
-        (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble=true));
+        (event.preventDefault ? event.preventDefault() : (event.returnValue = false));
+        (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble = true));
 
         return true;
     }
@@ -342,8 +342,8 @@ MouseHandler.prototype = (function () {
             this._mouseDrag(event);
 
             // поддержка ie8
-            (event.preventDefault ? event.preventDefault() : (event.returnValue=false));
-            (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble=true));
+            (event.preventDefault ? event.preventDefault() : (event.returnValue = false));
+            (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble = true));
 
             return false;
         }
@@ -357,8 +357,8 @@ MouseHandler.prototype = (function () {
         }
 
         // поддержка ie8
-        (event.preventDefault ? event.preventDefault() : (event.returnValue=false));
-        (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble=true));
+        (event.preventDefault ? event.preventDefault() : (event.returnValue = false));
+        (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble = true));
 
         return !this.mouseStarted;
     }
@@ -378,8 +378,8 @@ MouseHandler.prototype = (function () {
         // поддержка ie8
         event = getEvent(event);
 
-        removeEvent(document.querySelector('.table'), 'mousemove', this._mouseMoveDelegate);
-        removeEvent(document.querySelector('.table'), 'mouseup', this._mouseUpDelegate);
+        removeEvent(document, 'mousemove', this._mouseMoveDelegate);
+        removeEvent(document, 'mouseup', this._mouseUpDelegate);
 
         if (this._mouseStarted) {
             this._mouseStarted = false;
@@ -390,23 +390,23 @@ MouseHandler.prototype = (function () {
         }
 
         // поддержка ie8
-        (event.preventDefault ? event.preventDefault() : (event.returnValue=false));
-        (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble=true));
+        (event.preventDefault ? event.preventDefault() : (event.returnValue = false));
+        (event.stopPropagation ? event.stopPropagation() : (event.cancelBubble = true));
 
         return false;
     }
     function _mouseDistanceMet(newEvent, lastEvent) {
         var x = Math.abs(eventPageX(lastEvent) - eventPageX(newEvent)),
             y = Math.abs(eventPageY(lastEvent) - eventPageY(newEvent));
-        return (Math.sqrt(x*x + y*y)) >= this.options.distance;
+        return (Math.sqrt(x * x + y * y)) >= this.options.distance;
     }
 
     // Это методы-placeholder, которые должны быть переопределены расширениями
-    function _mousePrepareClick() {}
-    function _mousePrepareDrag() {}
-    function _mouseDrag(event) {}
-    function _mouseExecuteClick() {}
-    function _mouseStopDrag() {}
+    function _mousePrepareClick() { }
+    function _mousePrepareDrag() { }
+    function _mouseDrag(event) { }
+    function _mouseExecuteClick() { }
+    function _mouseStopDrag() { }
 
     return {
         constructor: MouseHandler,
@@ -435,7 +435,7 @@ function DragSortHandler(table, options) {
     // установить параметры
     var newOptions = {};
     for (var opt in this.options)
-        newOptions[opt] = (typeof options[opt] == 'undefined') ?  this.options[opt] : options[opt];
+        newOptions[opt] = (typeof options[opt] == 'undefined') ? this.options[opt] : options[opt];
     this.options = newOptions;
 
     // таблица
@@ -678,26 +678,29 @@ function DragSortHandler(table, options) {
     }
 
     DragSortHandler.prototype._mouseExecuteClick = function (event) {
-        var index = 0,
-            cell = eventTarget(event).parentNode.parentNode;
+        var target = eventTarget(event);
+
+        if (target && target.classList && target.classList.contains('resize-elem')) return;
+
+        var node = target;
+        while (node && node.nodeName !== 'TH' && node !== this.hr) node = node.parentNode;
+        if (!node || node.nodeName !== 'TH') return;
+
+        var cell = node;
+
         for (var j = 0; j < this.nc; j++) {
             var c = this.hr.cells[j];
             if (c !== cell) {
                 if (hasClass(c, 'sort-up') || hasClass(c, 'sort-down')) {
-                    c.className = c.className.replace(' sort-down', '')
-                        .replace(' sort-up', '');
+                    c.className = c.className.replace(' sort-down', '').replace(' sort-up', '');
                 }
-            } else {
-                index = j;
             }
         }
 
         this.cell = cell;
         sort(cell, this.table);
+    };
 
-        // if (this.options.restoreState)
-        //     saveState('table-drag-sort-resize', this.table, 'sort', {index: index, order: ((hasClass(cell, 'sort-down')) ? 'sort-up' : 'sort-down')});
-    }
     DragSortHandler.prototype._mouseStopDrag = function (event) {
         console.log("_mouseStopDrag");
 
@@ -725,7 +728,7 @@ function ResizeHandler(table, options) {
     // установить параметры
     var newOptions = {};
     for (var opt in this.options) {
-        newOptions[opt] = (typeof options[opt] == 'undefined') ?  this.options[opt] : options[opt];
+        newOptions[opt] = (typeof options[opt] == 'undefined') ? this.options[opt] : options[opt];
     }
     this.options = newOptions;
 
@@ -751,7 +754,7 @@ function ResizeHandler(table, options) {
         for (var i = 0; i < this.nc; i++) {
             var cell = this.hr.cells[i],
                 width = elementStyleProperty(cell, 'width'),
-                width = width == 'auto'?(cell.clientWidth-numericProperty(elementStyleProperty(cell, 'paddingLeft'))-numericProperty(elementStyleProperty(cell, 'paddingRight')))+'px':width; // поддержка ie8
+                width = width == 'auto' ? (cell.clientWidth - numericProperty(elementStyleProperty(cell, 'paddingLeft')) - numericProperty(elementStyleProperty(cell, 'paddingRight'))) + 'px' : width; // поддержка ie8
             cell.style.width = width;
             cell.setAttribute('data-cell-id', i);
         }
@@ -770,13 +773,13 @@ function ResizeHandler(table, options) {
             cell = [],
             width = [];
         for (var i = 0; i < 2; i++) {
-            cell[i] = this.hr.cells[initialColumn+(i?fixed:i)];
+            cell[i] = this.hr.cells[initialColumn + (i ? fixed : i)];
             width[i] = numericProperty(cell[i].style.width);
         }
 
         for (var i = 0; i < this.nr; i++) {
             for (var j = 0; j <= fixed; j++) {
-                cell = this.table.rows[i].cells[initialColumn+j];
+                cell = this.table.rows[i].cells[initialColumn + j];
                 cell.style.maxWidth = cell.style.width = width[j] + 'px';
             }
         }
@@ -790,51 +793,56 @@ function ResizeHandler(table, options) {
     ResizeHandler.prototype._mouseDrag = function (event) {
         var dist = eventPageX(event) - eventPageX(this._mouseDownEvent),
             initialColumn = this.ic,
-            fixed = this.options.fixed,
-            cell = [],
-            width = [];
-        for (var i = 0; i < 2; i++) {
-            cell[i] = this.hr.cells[initialColumn+(i?fixed:i)];
-            width[i] = numericProperty(cell[i].style.width);
+            fixed = (this.options.fixed === true || this.options.fixed === 1),
+            minW = this.options.minWidth;
+
+        // Если включён фиксированный режим, но соседней колонки нет (последняя),
+        // переходим к одиночному режиму.
+        if (fixed && !this.hr.cells[initialColumn + 1]) {
+            fixed = false;
         }
 
-        if (width[0] <= -dist || width[1] <= dist) {
-            this._mouseStopDrag(event);
-        } else {
-            var newWidth = [width[0] + dist, width[1] - dist];
-            if (newWidth[0] > this.options.minWidth && newWidth[1] > this.options.minWidth) {
+        if (!fixed) {
+            // --- ОДНА колонка ---
+            var th = this.hr.cells[initialColumn];
+            var w0 = numericProperty(th.style.width);
+            var newW0 = Math.max(minW, w0 + dist);
 
-                for (var i = 0; i < this.nr; i++) {
-                    for (var j = 0; j <= fixed; j++) {
-                        cell = this.table.rows[i].cells[initialColumn+j];
-                        cell.style.maxWidth = cell.style.width = newWidth[j] + 'px';
-                    }
-                }
-
-                this._mouseDownEvent = event;
-                if (!event.which) { // определить ie8
-                    var copy = {};
-                    for (var attr in event) {
-                        copy[attr] = event[attr];
-                    }
-                    this._mouseDownEvent = copy;
-                }
+            for (var r = 0; r < this.nr; r++) {
+                var c = this.table.rows[r].cells[initialColumn];
+                c.style.maxWidth = c.style.width = newW0 + 'px';
             }
-        }
-    }
-    ResizeHandler.prototype._mouseStopDrag = function () {
-        var temp = new Array(this.nc);
-        for (var i = 0; i < this.nc; i++) {
-            var cell = this.hr.cells[i];
-            temp[i] = cell.style.width;
+
+            // двигаем "якорь" для следующего кадра
+            this._mouseDownEvent = event;
+            if (!event.which) { var copy = {}; for (var a in event) copy[a] = event[a]; this._mouseDownEvent = copy; }
+            return;
         }
 
-        // if (this.options.restoreState)
-        //     saveState('table-drag-sort-resize', this.table, 'resize', temp);
+        // --- ДВЕ колонки (fixed=true) ---
+        var th0 = this.hr.cells[initialColumn];
+        var th1 = this.hr.cells[initialColumn + 1];
+        var w0 = numericProperty(th0.style.width);
+        var w1 = numericProperty(th1.style.width);
 
-        // восстановить курсор
-        document.body.style.cursor = this.cur;
+        var newW0 = w0 + dist;
+        var newW1 = w1 - dist;
+
+        // Держим минимум и сумму (w0+w1) постоянной
+        if (newW0 < minW) { newW0 = minW; newW1 = w0 + w1 - newW0; }
+        if (newW1 < minW) { newW1 = minW; newW0 = w0 + w1 - newW1; }
+
+        for (var i = 0; i < this.nr; i++) {
+            var c0 = this.table.rows[i].cells[initialColumn];
+            var c1 = this.table.rows[i].cells[initialColumn + 1];
+            c0.style.maxWidth = c0.style.width = newW0 + 'px';
+            c1.style.maxWidth = c1.style.width = newW1 + 'px';
+        }
+
+        this._mouseDownEvent = event;
+        if (!event.which) { var cp = {}; for (var k in event) cp[k] = event[k]; this._mouseDownEvent = cp; }
     };
+
 })();
 
 export function TableDragSortResize(table, options) {
@@ -855,11 +863,11 @@ export function TableDragSortResize(table, options) {
     var resizeHandler = new ResizeHandler(table, options);
 
     // прикрепить обработчики к каждой ячейке строки заголовка.
-    for (var i = 0; i < ((options.fixed)?(dragSortHandler.nc-1):dragSortHandler.nc); i++) {
+    for (var i = 0; i < ((options.fixed) ? (dragSortHandler.nc - 1) : dragSortHandler.nc); i++) {
         var cell = dragSortHandler.hr.cells[i];
 
         var paddingTop = numericProperty(elementStyleProperty(cell, 'padding-top'));
-        cell.style.paddingTop=(paddingTop>6?paddingTop:6)+'px';
+        cell.style.paddingTop = (paddingTop > 6 ? paddingTop : 6) + 'px';
         cell.className += ' sort-header';
 
         // установить курсор по-умолчанию

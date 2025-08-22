@@ -1,0 +1,249 @@
+{% extends "src/elements/_template.njk" %}
+{% set title = "10094 дворовых территорий" %}
+{% set nsi = true %}
+{% set courtyard_territories = true %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="page-bar">
+            <div class="page-bar__search">
+                <form action="" class="d-flex column-gap-12">
+                    <label class="field">
+                        <input type="text" name="search" placeholder="Введите ваш запрос">
+                        <i class="select__icon icon-magnifier"></i>
+                    </label>
+                    <button type="button" class="btn btn-primary">
+                        <span>Найти</span>
+                    </button>
+                </form>
+            </div>
+            <div class="page-bar__items">
+                <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
+                    <i class="icon-filter"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="settings">
+                    <i class="icon-gear"></i>
+                </button>
+                <button type="button" class="btn btn-primary" data-src="#export-registry" data-fancybox="">
+                    <i class="icon-download"></i>
+                    <span>Экспорт</span>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                    <i class="icon-pin"></i>
+                    <span>Карта</span>
+                </button>
+            </div>
+        </div>
+    </div><!-- .page-header -->
+
+
+    <div class="table-responsive">
+        <table id="tableCourtyardTerritories" class="table">
+            <thead>
+            <tr>
+                <th>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" name="setting-item">
+                        <i class="checkbox__item"></i>
+                    </label>
+                </th>
+                <th class="text-nowrap">ID</th>
+                <th class="text-nowrap">
+                    ID АСУ ЕДС
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th class="text-nowrap">Адрес</th>
+                <th class="text-nowrap">
+                    Округ
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th class="text-nowrap">
+                    Район
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th class="text-nowrap">
+                    Координаты
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th class="text-nowrap">Общая <br >площадь уборки, м²
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th class="text-nowrap">
+                    Площадь <br >ручной уборки, м²
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th class="text-nowrap">
+                    Площадь <br >механизированной уборки, м²
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr data-offcanvas-target-click="courtyard_territories_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">Улица Нижняя 20</td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>55.775697, 37.573569</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                </tr>
+                <tr data-offcanvas-target-click="courtyard_territories_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">Улица Нижняя 20</td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>55.775697, 37.573569</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                </tr>
+                <tr data-offcanvas-target-click="courtyard_territories_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">Улица Нижняя 20</td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>55.775697, 37.573569</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                </tr>
+                <tr data-offcanvas-target-click="courtyard_territories_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">Улица Нижняя 20</td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>55.775697, 37.573569</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                </tr>
+                <tr data-offcanvas-target-click="courtyard_territories_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">Улица Нижняя 20</td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>55.775697, 37.573569</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                </tr>
+                <tr data-offcanvas-target-click="courtyard_territories_view">
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" name="setting-item">
+                            <i class="checkbox__item"></i>
+                        </label>
+                    </td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">00157945</td>
+                    <td class="text-nowrap">Улица Нижняя 20</td>
+                    <td class="text-nowrap">ЗАО</td>
+                    <td class="text-nowrap">Красносельский</td>
+                    <td>55.775697, 37.573569</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                    <td class="text-nowrap">82</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!-- .table-responsive -->
+
+
+
+    <div class="page-nav">
+        <ol class="pagination">
+            <li class="pagination__item">
+                <span class="pagination__link active">1</span>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">3</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">4</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">5</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">6</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__control">
+                    <span>Следующая</span>
+                </a>
+            </li>
+        </ol>
+        <div class="page-view">
+            <div class="select select--sm" data-select>
+                <input type="hidden" name="view" data-select-value>
+                <div class="select__control" data-select-control>
+                    <div class="select__active" data-select-active>Показано записей: 10</div>
+                </div>
+                <div class="select__dropdown select__dropdown--top" data-select-dropdown>
+                    <div class="select__item active" data-select-item="Показано записей: 10">10</div>
+                    <div class="select__item" data-select-item="Показано записей: 20">20</div>
+                    <div class="select__item" data-select-item="Показано записей: 30">30</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .page-nav -->
+
+{% endblock %}
+
+
+
+

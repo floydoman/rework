@@ -1,0 +1,258 @@
+{% extends "src/elements/_template.njk" %}
+{% set title = "1094 записи" %}
+{% set tabs = true %}
+{% set logging_log = true %}
+{% set aside = false %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="page-bar">
+            <div class="page-bar__search">
+                <form action="" class="d-flex column-gap-12">
+                    <label class="field">
+                        <input type="text" name="search" placeholder="Введите ваш запрос">
+                        <i class="select__icon icon-magnifier"></i>
+                    </label>
+                    <button type="button" class="btn btn-primary">
+                        <span>Найти</span>
+                    </button>
+                </form>
+            </div>
+            <div class="page-bar__items">
+                <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
+                    <i class="icon-filter"></i>
+                </button>
+            </div>
+        </div>
+    </div><!-- .page-header -->
+
+    <div class="table-responsive">
+        <table id="tableIntegrationLog" class="table">
+            <thead>
+            <tr>
+                <th>
+                    Дата и время
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th>
+                    ID запроса
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th>
+                    ID ответа
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th class="text-nowrap">Тип</th>
+                <th class="text-nowrap">
+                    Система
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th class="text-nowrap">Данные запроса</th>
+                <th>
+                    Направление
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+                <th>
+                    Статус
+                    <div class="table-sorter">
+                        <span></span>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr data-offcanvas-target-click="log_answer_view">
+                    <td class="text-nowrap">24.05.2024 10:05</td>
+                    <td class="text-nowrap text-ellipsis"><span>Отсутствует</span></td>
+                    <td class="text-nowrap text-ellipsis"><span>Ответ 616586bc4d85d600</span></td>
+                    <td class="text-nowrap">Получение данных</td>
+                    <td class="text-nowrap">ЕДЦ</td>
+                    <td>Ответ от ЕДЦ</td>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert justify-content-start">
+                            <i class="icon-arrowright blue"></i>
+                            Входящая
+                        </div>
+                    </td>
+                    <td class="text-nowrap text-warning">В процессе</td>
+                </tr>
+                <tr data-offcanvas-target-click="log_request_view">
+                    <td class="text-nowrap">22.05.2024 09:35</td>
+                    <td class="text-nowrap text-ellipsis"><span>Запрос 6512affe2ff001000146e597</span></td>
+                    <td class="text-nowrap text-ellipsis"><span>Отсутствует</span></td>
+                    <td class="text-nowrap">Отправка данных</td>
+                    <td class="text-nowrap">Insight</td>
+                    <td>Запрос в Insight</td>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert justify-content-start">
+                            <i class="icon-arrowleft red"></i>
+                            Исходящая
+                        </div>
+                    </td>
+                    <td class="text-nowrap text-warning">В процессе</td>
+                </tr>
+                <tr data-offcanvas-target-click="log_request_view">
+                    <td class="text-nowrap">22.05.2024 09:30</td>
+                    <td class="text-nowrap text-ellipsis"><span>Запрос 6512b09f2ff001000146e599</span></td>
+                    <td class="text-nowrap text-ellipsis"><span>Отсутствует</span></td>
+                    <td class="text-nowrap">Отправка данных</td>
+                    <td class="text-nowrap">Insight</td>
+                    <td>Запрос в Insight</td>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert justify-content-start">
+                            <i class="icon-arrowleft red"></i>
+                            Исходящая
+                        </div>
+                    </td>
+                    <td class="text-nowrap text-warning">В процессе</td>
+                </tr>
+                <tr data-offcanvas-target-click="log_answer_view">
+                    <td class="text-nowrap">21.05.2024 12:30</td>
+                    <td class="text-nowrap text-ellipsis"><span>Отсутствует</span></td>
+                    <td class="text-nowrap text-ellipsis"><span>Ответ 616586bc4d85d600</span></td>
+                    <td class="text-nowrap">Получение данных</td>
+                    <td class="text-nowrap">ЕДЦ</td>
+                    <td>Ответ от ЕДЦ</td>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert justify-content-start">
+                            <i class="icon-arrowright blue"></i>
+                            Входящая
+                        </div>
+                    </td>
+                    <td class="text-nowrap text-warning">В процессе</td>
+                </tr>
+                <tr data-offcanvas-target-click="log_request_view">
+                    <td class="text-nowrap">17.05.2024 11:35</td>
+                    <td class="text-nowrap text-ellipsis"><span>Запрос 616586bc4d85d600</span></td>
+                    <td class="text-nowrap text-ellipsis"><span>Отсутствует</span></td>
+                    <td class="text-nowrap">Отправка данных</td>
+                    <td class="text-nowrap">Insight</td>
+                    <td>Запрос в Insight</td>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert justify-content-start">
+                            <i class="icon-arrowleft red"></i>
+                            Исходящая
+                        </div>
+                    </td>
+                    <td class="text-nowrap text-danger">Не выполнено</td>
+                </tr>
+                <tr data-offcanvas-target-click="log_answer_view">
+                    <td class="text-nowrap">17.05.2024 11:30</td>
+                    <td class="text-nowrap text-ellipsis"><span>Отсутствует</span></td>
+                    <td class="text-nowrap text-ellipsis"><span>Ответ 6512affe2ff001000146e597</span></td>
+                    <td class="text-nowrap">Получение данных</td>
+                    <td class="text-nowrap">ЕДЦ</td>
+                    <td>Ответ от ЕДЦ</td>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert justify-content-start">
+                            <i class="icon-arrowright blue"></i>
+                            Входящая
+                        </div>
+                    </td>
+                    <td class="text-nowrap text-success">Выполнено</td>
+                </tr>
+                <tr data-offcanvas-target-click="log_answer_view">
+                    <td class="text-nowrap">17.05.2024 11:20</td>
+                    <td class="text-nowrap text-ellipsis"><span>Отсутствует</span></td>
+                    <td class="text-nowrap text-ellipsis"><span>Ответ 616586bc4d85d600</span></td>
+                    <td class="text-nowrap">Получение данных</td>
+                    <td class="text-nowrap">ML</td>
+                    <td>Пакет данных из внешней системы «ML»</td>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert justify-content-start">
+                            <i class="icon-arrowright blue"></i>
+                            Входящая
+                        </div>
+                    </td>
+                    <td class="text-nowrap text-danger">Не выполнено</td>
+                </tr>
+                <tr data-offcanvas-target-click="log_request_view">
+                    <td class="text-nowrap">17.05.2024 11:00</td>
+                    <td class="text-nowrap text-ellipsis"><span>Запрос 6512b09f2ff001000146e599</span></td>
+                    <td class="text-nowrap text-ellipsis"><span>Отсутствует</span></td>
+                    <td class="text-nowrap">Отправка данных</td>
+                    <td class="text-nowrap">Insight</td>
+                    <td>Запрос в Insight</td>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert justify-content-start">
+                            <i class="icon-arrowleft red"></i>
+                            Исходящая
+                        </div>
+                    </td>
+                    <td class="text-nowrap text-success">Выполнено</td>
+                </tr>
+                <tr data-offcanvas-target-click="log_request_view">
+                    <td class="text-nowrap">06.05.2024 09:30</td>
+                    <td class="text-nowrap text-ellipsis"><span>Запрос 6512b09f2ff001000146e599</span></td>
+                    <td class="text-nowrap text-ellipsis"><span>Отсутствует</span></td>
+                    <td class="text-nowrap">Отправка данных</td>
+                    <td class="text-nowrap">Insight</td>
+                    <td>Запрос в Insight</td>
+                    <td class="text-nowrap">
+                        <div class="pin pin--alert justify-content-start">
+                            <i class="icon-arrowleft red"></i>
+                            Исходящая
+                        </div>
+                    </td>
+                    <td class="text-nowrap text-success">Выполнено</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!-- .table-responsive -->
+
+    <div class="page-nav">
+        <ol class="pagination">
+            <li class="pagination__item">
+                <span class="pagination__link active">1</span>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">3</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">4</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">5</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">6</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__control">
+                    <span>Следующая</span>
+                </a>
+            </li>
+        </ol>
+        <div class="page-view">
+            <div class="select select--sm" data-select>
+                <input type="hidden" name="view" data-select-value>
+                <div class="select__control" data-select-control>
+                    <div class="select__active" data-select-active>Показано записей: 10</div>
+                </div>
+                <div class="select__dropdown select__dropdown--top" data-select-dropdown>
+                    <div class="select__item active" data-select-item="Показано записей: 10">10</div>
+                    <div class="select__item" data-select-item="Показано записей: 20">20</div>
+                    <div class="select__item" data-select-item="Показано записей: 30">30</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .page-nav -->
+
+{% endblock %}
+
+
+
+

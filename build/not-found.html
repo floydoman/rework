@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Список страниц</title>
+  <title>История</title>
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -68,7 +68,7 @@
     </header>
 
 
-    <section class="main">
+    <section class="main" data-tabs>
 
       <aside class="aside ">
         <div class="aside__nav">
@@ -87,103 +87,51 @@
       <div class="content ">
 
         <div class="page-header">
-          <h1 class="page-title">Список страниц</h1>
-        </div>
-        <ul class="mb-40 page-list">
-          <li>
-            <a href="registry.html">Реестр на основе КФЗ</a>
-          </li>
-          <li>
-            <a href="employee.html">Справочник сотрудников</a>
-          </li>
-          <li>
-            <a href="employee-delete.html">Справочник сотрудников - удаление</a>
-          </li>
-          <li>
-            <a href="employee-delete-alert.html">Справочник сотрудников - удаление (уведомление)</a>
-          </li>
-          <li>
-            <a href="waste-accumulation.html">Справочник мест накопления отходов</a>
-          </li>
-          <li>
-            <a href="access.html">Доступы</a>
-          </li>
-          <li>
-            <a href="roles.html">Роли</a>
-          </li>
-          <li>
-            <a href="users.html">Пользователи</a>
-          </li>
-          <li>
-            <a href="integration-log.html">Журнал интеграционный</a>
-          </li>
-          <li>
-            <a href="logging-log.html">Журнал логирования</a>
-          </li>
-          <li>
-            <a href="not-found.html">Ничего не найдено</a>
-          </li>
-          <li>
-            <a href="courtyard-territories.html">Справочник Дворовые территории</a>
-          </li>
-          <li>
-            <a href="workshops.html">Справочник Мастерские участка</a>
-          </li>
-          <li>
-            <a href="discharge.html">Выгрузки</a>
-          </li>
-        </ul>
-        <ul class="page-list mb-40">
-          <li>
-            <a href="#" data-offcanvas-target="task">Карточка задания</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="new_task">Новое задание</a>
-          </li>
-          <li>
-            <button type="button" class="btn-link" data-src="#period_settings" data-fancybox>Настройка периодичности</button>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="employee_card">Карточка сотрудника</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="employee_card_edit">Карточка сотрудника - редактировать</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="task_active">Задание 1234-512345</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="employee_information">Карточка сотрудника с вкладками</a>
-          </li>
-        </ul>
-        <ul class="page-list mb-40">
-          <li>
-            <a href="#" data-src="#employee-delete" data-fancybox>Модалка "Подтверждение удаления"</a>
-          </li>
-          <li>
-            <a href="#" data-src="#approving-changes" data-fancybox>Модалка "Согласование изменений"</a>
-          </li>
-          <li>
-            <a href="#" data-src="#for-approval" data-fancybox>Модалка "Изменения отправлены на согласование"</a>
-          </li>
-          <li>
-            <a href="#" data-src="#failed" data-fancybox>Модалка "Не удалось отправить запрос"</a>
-          </li>
-          <li>
-            <button type="button" class="btn-link" data-src="#works" data-fancybox>Модалка "Назначенные работы"</button>
-          </li>
-        </ul>
-        <ul class="page-list mb-40">
-          <li>
-            <a href="#" data-alert-target="for-approval">Уведомление "Изменения отправлены на согласование" (зеленый)</a>
-          </li>
-          <li>
-            <a href="#" data-alert-target="failed">Уведомление "Не удалось отправить запрос" (красный)</a>
-          </li>
-          <li>
-            <a href="#" data-alert-target="failed-warning">Уведомление "Не удалось отправить запрос" (оранжевый)</a>
-          </li>
-        </ul>
+          <div class="page-bar">
+            <div class="page-bar__search">
+              <form action="" class="d-flex column-gap-12">
+                <label class="field">
+                  <input type="text" name="search" placeholder="Введите ваш запрос">
+                  <i class="select__icon icon-magnifier"></i>
+                </label>
+              </form>
+            </div>
+            <div class="page-bar__items">
+              <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
+                <i class="icon-filter"></i>
+              </button>
+              <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="settings">
+                <i class="icon-gear"></i>
+              </button>
+              <button type="button" class="btn btn-primary" data-src="#export-registry" data-fancybox="">
+                <i class="icon-download"></i>
+                <span>Экспорт</span>
+              </button>
+              <button type="button" class="btn btn-primary">
+                <i class="icon-plus"></i>
+                <span>Добавить</span>
+              </button>
+              <button type="button" class="btn btn-secondary">
+                <i class="icon-pin"></i>
+                <span>Карта</span>
+              </button>
+            </div>
+          </div>
+        </div><!-- .page-header -->
+
+
+
+        <div class="d-flex align-center justify-content-center vh-70">
+          <div class="not-found-container">
+            <object class="mb-60" type="image/svg+xml" data="img/not-found.svg"></object>
+            <div class="not-found__title">Ничего не найдено</div>
+            <div class="not-found__text mb-24">По данному запросу ничего не обнаружено</div>
+            <a href="index.html" class="btn btn-primary">На главную</a>
+          </div>
+        </div><!-- .tabs-content -->
+
+
+
 
       </div>
     </section>

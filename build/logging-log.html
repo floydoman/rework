@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Список страниц</title>
+  <title>1094 записи</title>
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -27,7 +27,7 @@
         <a href="access.html" class="header__link ">Администрирование</a>
         <a href="employee.html" class="header__link ">НСИ</a>
         <div data-dropdown>
-          <a class="header__link " data-dropdown-toggle>
+          <a class="header__link active" data-dropdown-toggle>
             <span>Журналы</span>
           </a>
           <div class="dropdown-content" data-dropdown-content="">
@@ -68,9 +68,9 @@
     </header>
 
 
-    <section class="main">
+    <section class="main" data-tabs>
 
-      <aside class="aside ">
+      <aside class="aside hide">
         <div class="aside__nav">
 
 
@@ -84,106 +84,189 @@
         </div>
       </aside>
 
-      <div class="content ">
+      <div class="content full-width">
 
         <div class="page-header">
-          <h1 class="page-title">Список страниц</h1>
-        </div>
-        <ul class="mb-40 page-list">
-          <li>
-            <a href="registry.html">Реестр на основе КФЗ</a>
-          </li>
-          <li>
-            <a href="employee.html">Справочник сотрудников</a>
-          </li>
-          <li>
-            <a href="employee-delete.html">Справочник сотрудников - удаление</a>
-          </li>
-          <li>
-            <a href="employee-delete-alert.html">Справочник сотрудников - удаление (уведомление)</a>
-          </li>
-          <li>
-            <a href="waste-accumulation.html">Справочник мест накопления отходов</a>
-          </li>
-          <li>
-            <a href="access.html">Доступы</a>
-          </li>
-          <li>
-            <a href="roles.html">Роли</a>
-          </li>
-          <li>
-            <a href="users.html">Пользователи</a>
-          </li>
-          <li>
-            <a href="integration-log.html">Журнал интеграционный</a>
-          </li>
-          <li>
-            <a href="logging-log.html">Журнал логирования</a>
-          </li>
-          <li>
-            <a href="not-found.html">Ничего не найдено</a>
-          </li>
-          <li>
-            <a href="courtyard-territories.html">Справочник Дворовые территории</a>
-          </li>
-          <li>
-            <a href="workshops.html">Справочник Мастерские участка</a>
-          </li>
-          <li>
-            <a href="discharge.html">Выгрузки</a>
-          </li>
-        </ul>
-        <ul class="page-list mb-40">
-          <li>
-            <a href="#" data-offcanvas-target="task">Карточка задания</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="new_task">Новое задание</a>
-          </li>
-          <li>
-            <button type="button" class="btn-link" data-src="#period_settings" data-fancybox>Настройка периодичности</button>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="employee_card">Карточка сотрудника</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="employee_card_edit">Карточка сотрудника - редактировать</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="task_active">Задание 1234-512345</a>
-          </li>
-          <li>
-            <a href="#" data-offcanvas-target="employee_information">Карточка сотрудника с вкладками</a>
-          </li>
-        </ul>
-        <ul class="page-list mb-40">
-          <li>
-            <a href="#" data-src="#employee-delete" data-fancybox>Модалка "Подтверждение удаления"</a>
-          </li>
-          <li>
-            <a href="#" data-src="#approving-changes" data-fancybox>Модалка "Согласование изменений"</a>
-          </li>
-          <li>
-            <a href="#" data-src="#for-approval" data-fancybox>Модалка "Изменения отправлены на согласование"</a>
-          </li>
-          <li>
-            <a href="#" data-src="#failed" data-fancybox>Модалка "Не удалось отправить запрос"</a>
-          </li>
-          <li>
-            <button type="button" class="btn-link" data-src="#works" data-fancybox>Модалка "Назначенные работы"</button>
-          </li>
-        </ul>
-        <ul class="page-list mb-40">
-          <li>
-            <a href="#" data-alert-target="for-approval">Уведомление "Изменения отправлены на согласование" (зеленый)</a>
-          </li>
-          <li>
-            <a href="#" data-alert-target="failed">Уведомление "Не удалось отправить запрос" (красный)</a>
-          </li>
-          <li>
-            <a href="#" data-alert-target="failed-warning">Уведомление "Не удалось отправить запрос" (оранжевый)</a>
-          </li>
-        </ul>
+          <div class="page-bar">
+            <div class="page-bar__search">
+              <form action="" class="d-flex column-gap-12">
+                <label class="field">
+                  <input type="text" name="search" placeholder="Введите ваш запрос">
+                  <i class="select__icon icon-magnifier"></i>
+                </label>
+                <button type="button" class="btn btn-primary">
+                  <span>Найти</span>
+                </button>
+              </form>
+            </div>
+            <div class="page-bar__items">
+              <button type="button" class="btn btn-primary btn-icon" data-offcanvas-target="filter">
+                <i class="icon-filter"></i>
+              </button>
+            </div>
+          </div>
+        </div><!-- .page-header -->
+
+        <div class="table-responsive">
+          <table id="tableLoggingLog" class="table">
+            <thead>
+              <tr>
+                <th>
+                  Дата и время
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th class="text-nowrap">Номер заявки</th>
+                <th class="text-nowrap">Группа</th>
+                <th class="text-nowrap">Событие</th>
+                <th>
+                  Описание события
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th>
+                  Пользователь
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+                <th>
+                  Организация
+                  <div class="table-sorter">
+                    <span></span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Заявка</td>
+                <td class="text-nowrap">Создание задания</td>
+                <td class="text-nowrap">Создано задание №005322 в статусе “Новое”</td>
+                <td class="text-nowrap">Иванов И.И.</td>
+                <td class="text-nowrap">Наименование организации</td>
+              </tr>
+              <tr>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Заявка</td>
+                <td class="text-nowrap">Создание задания</td>
+                <td class="text-nowrap">Создано задание №005322 в статусе “Новое”</td>
+                <td class="text-nowrap">Иванов И.И.</td>
+                <td class="text-nowrap">Наименование организации</td>
+              </tr>
+              <tr>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Заявка</td>
+                <td class="text-nowrap">Создание задания</td>
+                <td class="text-nowrap">Создано задание №005322 в статусе “Новое”</td>
+                <td class="text-nowrap">Иванов И.И.</td>
+                <td class="text-nowrap">Наименование организации</td>
+              </tr>
+              <tr>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Заявка</td>
+                <td class="text-nowrap">Создание задания</td>
+                <td class="text-nowrap">Создано задание №005322 в статусе “Новое”</td>
+                <td class="text-nowrap">Иванов И.И.</td>
+                <td class="text-nowrap">Наименование организации</td>
+              </tr>
+              <tr>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Заявка</td>
+                <td class="text-nowrap">Создание задания</td>
+                <td class="text-nowrap">Создано задание №005322 в статусе “Новое”</td>
+                <td class="text-nowrap">Иванов И.И.</td>
+                <td class="text-nowrap">Наименование организации</td>
+              </tr>
+              <tr>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Заявка</td>
+                <td class="text-nowrap">Создание задания</td>
+                <td class="text-nowrap">Создано задание №005322 в статусе “Новое”</td>
+                <td class="text-nowrap">Иванов И.И.</td>
+                <td class="text-nowrap">Наименование организации</td>
+              </tr>
+              <tr>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Заявка</td>
+                <td class="text-nowrap">Создание задания</td>
+                <td class="text-nowrap">Создано задание №005322 в статусе “Новое”</td>
+                <td class="text-nowrap">Иванов И.И.</td>
+                <td class="text-nowrap">Наименование организации</td>
+              </tr>
+              <tr>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Заявка</td>
+                <td class="text-nowrap">Создание задания</td>
+                <td class="text-nowrap">Создано задание №005322 в статусе “Новое”</td>
+                <td class="text-nowrap">Иванов И.И.</td>
+                <td class="text-nowrap">Наименование организации</td>
+              </tr>
+              <tr>
+                <td class="text-nowrap">12.12.2023, 10:00</td>
+                <td class="text-nowrap">00157945</td>
+                <td class="text-nowrap">Заявка</td>
+                <td class="text-nowrap">Создание задания</td>
+                <td class="text-nowrap">Создано задание №005322 в статусе “Новое”</td>
+                <td class="text-nowrap">Иванов И.И.</td>
+                <td class="text-nowrap">Наименование организации</td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- .table-responsive -->
+
+        <div class="page-nav">
+          <ol class="pagination">
+            <li class="pagination__item">
+              <span class="pagination__link active">1</span>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">3</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">4</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">5</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">6</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__control">
+                <span>Следующая</span>
+              </a>
+            </li>
+          </ol>
+          <div class="page-view">
+            <div class="select select--sm" data-select>
+              <input type="hidden" name="view" data-select-value>
+              <div class="select__control" data-select-control>
+                <div class="select__active" data-select-active>Показано записей: 10</div>
+              </div>
+              <div class="select__dropdown select__dropdown--top" data-select-dropdown>
+                <div class="select__item active" data-select-item="Показано записей: 10">10</div>
+                <div class="select__item" data-select-item="Показано записей: 20">20</div>
+                <div class="select__item" data-select-item="Показано записей: 30">30</div>
+              </div>
+            </div>
+          </div>
+        </div><!-- .page-nav -->
+
 
       </div>
     </section>
